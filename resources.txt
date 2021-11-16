@@ -1,0 +1,5 @@
+Reference for REST APIs - 
+    - https://restfulapi.net/rest-architectural-constraints/
+
+Cyber related points
+    - https://www.imperva.com/learn/performance/lazy-loading/

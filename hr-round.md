@@ -29,7 +29,28 @@ Well, being a great team player and honest toward my profession are my key stren
 ```
 > Weakness 
 ```
+I am like entirely focused/concentrated on one thing at a time.
+```
+```
 I get nervous while talking to new people. I have been working on it for quite a long time now and I can say with utmost confidence that I have come a long way.
+```
+
+### Question - _`What is your strength?`_
+### Answer -
+```
+I am a quick learner and a great team player.
+```
+
+### Question - _`Reason behind leaving your last job?`_
+### Answer -
+```
+In order to enhance my skillset, I am looking for better opportunities.
+```
+
+### Question - _`Tell me about your ability to work under pressure?`_
+### Answer -
+```
+I keep myself calm and focus on multitasking while being patient
 ```
 
 ### Question - _`How would you rate yourself on a scale of 1 to 10?`_

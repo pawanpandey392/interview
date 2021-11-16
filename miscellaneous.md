@@ -216,13 +216,6 @@ Above Accept header allows you to ask the server a JSON format (first choice). I
 
 The preference order is defined through the q parameter with values from 0 to 1. When nothing is specified, the implicit default value is 1.
 ```
-
-<br /><br />
-
-## ***`Question :- What is Lazy & Eager Loading?`***
-
-> Incomplete
-
 <br /><br />
 
 ## ***`Question :- What is REST API Compression?`***
@@ -350,9 +343,7 @@ HTTP/3 is the next proposed version of the HTTP protocol. HTTP/3 does not have w
 
 <br /><br />
 
-## ***`Question :- Difference between web1 and web2 and web3?`***
 
-<br /><br />
 
 ## ***`Question :- What is Tree Shaking in Webpack and how does it works?`***
 ```
@@ -465,23 +456,7 @@ In client-server rendering, rather than receiving all of the content from the HT
 
 <br /><br />
 
-## ***`Question :- What is Client Side Rendering?`***
 
-
-
-<br /><br />
-
-## ***`Question :- What is a Singleton Design Pattern?`***
-
-<br /><br />
-
-## ***`Question :- What are the SOLID Principles?`***
-
-<br /><br />
-
-## ***`Question :- What are PSR Rules?`***
-
-<br /><br />
 
 ## ***`Question :- What is Statelessness in REST APIs?`***
 
@@ -628,4 +603,329 @@ Validate request parameters on the very first step, before it reaches applicatio
 
 In API response, send relevant error messages and examples of correct input format to improve user experience.
 ```
+<br /><br />
+
+# **Incomplete Interview Questions**
+
+## ***`Question :- What is Lazy & Eager Loading?`***
+### _`1. What is Lazy Loading?`_
+```
+Lazy loading is the practice of delaying load or initialization of resources or objects until they’re actually needed to improve performance and save system resources. For example, if a web page has an image that the user has to scroll down to see, you can display a placeholder and lazy load the full image only when the user arrives to its location.
+```
+> The benefits of lazy loading include:
+#### _`a. Reduces initial load time – `_
+```
+> Lazy loading a webpage reduces page weight, allowing for a quicker page load time.
+```
+#### _`b. Bandwidth conservation – `_
+```
+> Lazy loading conserves bandwidth by delivering content to users only if it’s requested.
+```
+#### _`c. System resource conservation – `_
+```
+> Lazy loading conserves both server and client resources, because only some of the images, JavaScript and other code actually needs to be rendered or executed.
+```
+
+### _`2. Lazy Loading vs. Eager Loading`_
+```
+While lazy loading delays the initialization of a resource, eager loading initializes or loads a resource as soon as the code is executed. Eager loading also involves pre-loading related entities referenced by a resource. For example, a PHP script with an include statement performs eager loading—as soon as it executes, eager loading pulls in and loads the included resources.
+
+Eager loading is beneficial when there is an opportunity or need to load resources in the background. For example, some websites display a “loading” screen and eagerly load all the resources required for the web application to run.
+```
+### _`3. Lazy Loading Implementing Methods`_
+```
+There are several open source libraries that can be used to implement lazy loading, including:
+```
+#### _`a. blazy.js – `_
+```
+blazy.js is a lightweight JavaScript library for lazy loading and multi-serving images, iframes, video and other resources.
+```
+#### _`b. LazyLoad – `_
+```
+LazyLoad is a script that automatically loads images as they enter the viewport.
+```
+
+> Methods for implementing lazy loading in your code include:
+#### _`a. Lazy initialization – `_
+```
+- This method sets objects to null. Object data is loaded only after and whenever invoking them, check if null, and if so, load object data.
+```
+#### _`b. Virtual proxy – `_
+```
+- when accessing an object, call a virtual object with same interface as the real object. When the virtual object is called, load the real object, then delegate to it.
+```
+#### _`c. Ghost – `_
+```
+- load an object in partial state, only using an identifier. The first time a property on the object is called, load the full data.
+```
+#### _`d. Value holder – `_
+```
+- create a generic object that handles lazy loading behavior. This object should appear in place of an object’s data fields.
+```
+
+> Examples - 
+#### _`a. Lazy Loading Images – `_
+```
+To lazy load an image, display a lightweight placeholder image, and replace with the real full-size image on scroll.
+
+    1. Inline <img> tags, using JavaScript to populate the tag if image is in viewport
+
+    2. Event handlers such as scroll or resize
+
+    3. The Intersection Observer API
+
+    4. The CSS background-image property
+```
+
+#### _`b. Lazy Loading Video – `_
+```
+To lazy load a video that doesn’t autoplay, you can use the HTML5 video tag’s preload attribute.
+
+For videos that autoplay, Google Chrome provides lazy loading automatically. In other browsers, you will need to declare the following attributes in the video tag:
+```
+```
+<video autoplay muted loop playsinline width="xx" height="xx" poster="placeholder-image.jpg">
+``` 
+### _`3. Lazy Loading Best Practices - `_
+```
+When performing lazy loading, consider the following tips:
+
+    1. Only lazy load resources that are displayed below the fold or outside the user’s viewport. In code, only lazy load objects that are not needed for initial or essential system operations.
+
+    2. When lazy loading an image, asynchronously decode it using the JavaScript decode() method before inserting it into the DOM. Otherwise, large images can cause the browser to freeze.
+
+    3. Handle errors in case the image or object fails to load.
+
+    4. Offer a noscript in case JavaScript is not available. Otherwise users with JavaScript disabled will not see any lazy-loaded resources.
+```
+
+<br /><br />
+
+## ***`Question :- What is clickjacking?`***
+
+```
+Clickjacking is an attack that tricks a user into clicking a webpage element which is invisible or disguised as another element. This can cause users to unwittingly download malware, visit malicious web pages, provide credentials or sensitive information, transfer money, or purchase products online.
+
+Typically, clickjacking is performed by displaying an invisible page or HTML element, inside an iframe, on top of the page the user sees. The user believes they are clicking the visible page but in fact they are clicking an invisible element in the additional page transposed on top of it.
+
+The invisible page could be a malicious page, or a legitimate page the user did not intend to visit – for example, a page on the user’s banking site that authorizes the transfer of money.
+```
+> There are several variations of the clickjacking attack, such as:
+#### _`1. Likejacking - `_
+```
+a technique in which the Facebook “Like” button is manipulated, causing users to “like” a page they actually did not intend to like.
+```
+#### _`2. Cursorjacking - `_
+```
+a UI redressing technique that changes the cursor for the position the user perceives to another position. Cursorjacking relies on vulnerabilities in Flash and the Firefox browser, which have now been fixed.
+```
+### _`2. Clickjacking attack example - `_
+
+```
+> The attacker creates an attractive page which promises to give the user a free trip to Tahiti.
+
+> In the background the attacker checks if the user is logged into his banking site and if so, loads the screen that enables transfer of funds, using query parameters to insert the attacker’s bank details into the form.
+
+> The bank transfer page is displayed in an invisible iframe above the free gift page, with the “Confirm Transfer” button exactly aligned over the “Receive Gift” button visible to the user.
+
+> The user visits the page and clicks the “Book My Free Trip” button.
+
+> In reality the user is clicking on the invisible iframe, and has clicked the “Confirm Transfer” button. Funds are transferred to the attacker.
+
+> The user is redirected to a page with information about the free gift (not knowing what happened in the background).
+```
+### _`3. Clickjacking mitigation - `_
+> There are two general ways to defend against clickjacking:
+
+#### _`a. Client-side methods - `_
+```
+the most common is called Frame Busting. Client-side methods can be effective in some cases, but are considered not to be a best practice, because they can be easily bypassed.
+```
+#### _`b. Server-side methods - `_
+```
+the most common is X-Frame-Options. Server-side methods are recommended by security experts as an effective way to defend against clickjacking.
+```
+
+> Mitigating clickjacking with X-Frame-Options response header
+
+```
+The X-Frame-Options response header is passed as part of the HTTP response of a web page, indicating whether or not a browser should be allowed to render a page inside a <FRAME> or <IFRAME> tag.
+```
+#### _`a. There are three values allowed for the X-Frame-Options header: - `_
+```
+    > DENY – does not allow any domain to display this page within a frame
+
+    > SAMEORIGIN – allows the current page to be displayed in a frame on another page, but only within the current domain
+
+    > ALLOW - FROM URI – allows the current page to be displayed in a frame, but only in a specific URI – for example www.example.com/frame-page
+```
+
+#### _`b. Using the SAMEORIGIN option to defend against clickjacking - `_
+```
+X-Frame-Options allows content publishers to prevent their own content from being used in an invisible frame by attackers.
+
+The DENY option is the most secure, preventing any use of the current page in a frame. More commonly, SAMEORIGIN is used, as it does enable the use of frames, but limits them to the current domain.
+```
+
+#### _`c. Limitations of X-Frame-Options - `_
+```
+> To enable the SAMEORIGIN option across a website, the X-Frame-Options header needs to be returned as part of the HTTP response for each individual page (cannot be applied cross-site).
+
+> X-Frame-Options does not support a whitelist of allowed domains, so it doesn’t work with multi-domain sites that need to display framed content between them.
+
+> Only one option can be used on a single page, so, for example, it is not possible for the same page to be displayed as a frame both on the current website and an external site.
+
+> The ALLOW-FROM option is not supported by all browsers.
+
+> X-Frame-Options is a deprecated option in most browsers.
+```
+
+#### _`d. Clickjacking test – Is your site vulnerable? - `_
+```
+A basic way to test if your site is vulnerable to clickjacking is to create an HTML page and attempt to include a sensitive page from your website in an iframe. It is important to execute the test code on another web server, because this is the typical behavior in a clickjacking attack.
+
+Use code like the following, provided as part of the OWASP Testing Guide:
+```
+
+```
+<html>
+<head>
+<title>Clickjack test page</title>
+</head>
+<body>
+<p>Website is vulnerable to clickjacking!</p>
+<iframe src="http://www.yoursite.com/sensitive-page" width="500" height="500"></iframe>
+</body>
+</html>
+```
+
+```
+View the HTML page in a browser and evaluate the page as follows:
+
+    > If the text “Website is vulnerable to clickjacking” appears and below it you see the content of your sensitive page, the page is vulnerable to clickjacking.
+
+    > If only the text “Website is vulnerable to clickjacking” appears, and you do not see the content of your sensitive page, the page is not vulnerable to the simplest form of clickjacking.
+
+However, additional testing is needed to see which anti-clickjacking methods are used on the page, and whether they can be bypassed by attackers.
+```
+
+## ***`Question :- What is a sticky session?`***
+```
+Session stickiness, a.k.a., session persistence, is a process in which a load balancer creates an affinity between a client and a specific network server for the duration of a session, (i.e., the time a specific IP spends on a website). Using sticky sessions can help improve user experience and optimize network resource usage.
+```
+```
+With sticky sessions, a load balancer assigns an identifying attribute to a user, typically by issuing a cookie or by tracking their IP details. Then, according to the tracking ID, a load balancer can start routing all of the requests of this user to a specific server for the duration of the session.
+```
+```
+This can prove very helpful, as HTTP/S is a stateless protocol that was not devised with session persistence in mind. Nevertheless, many web applications do have the need to serve personalized user data (e.g., keep logs of items in a shopping cart or chat conversations) over the course of a session.
+```
+```
+Without session persistence, the web application would have to maintain this information across multiple servers, which can prove inefficient—especially for large networks.
+```
+### _`1. Session stickiness: Advantages and disadvantages `_
+```
+Session stickiness offers a number of benefits that can improve your web application’s performance, including:
+```
+#### _`a. Minimized data exchange `_
+```
+When using sticky sessions, servers within your network don’t need to exchange session data, a costly process when done on scale.
+```
+#### _`b. RAM cache utilization `_
+```
+Sticky sessions allow for more effective utilization of your application’s RAM cache, resulting in better responsiveness.
+```
+
+```
+That said, sticky sessions also make it more difficult to keep servers in balance. A server can become overloaded if it accumulates too many sessions, or if specific sticky sessions require a high number of resources. This could result in your load balancer having to shift a client to a different server mid-session, resulting in data loss.
+```
+
+### _`2. Persistence using session cookies `_
+
+> There are two types of cookie-based session persistence: duration-based and application-controlled.
+
+#### _`a. Duration-based session persistence `_
+
+```
+Your load balancer issues a cookie that defines a specific timeframe for session stickiness. Each time the load balancer receives a client request, it checks whether this cookie is present.
+
+After the specified duration elapses and the cookie expires, the session is not sticky anymore.
+```
+
+#### _`b. Application-controlled session persistence `_
+
+```
+Your application generates a cookie that determines the duration of session stickiness. The load balancer still issues its own session cookie on top of it, but it now follows the lifetime of the application cookie.
+
+This makes sticky sessions more efficient, ensuring that users are never routed to a server after their local session cookie has already expired. However, it’s more complex to implement because it requires additional integration between the load balancer and the application.
+```
+
+<br /><br />
+
+## ***`Question :- What is web application security?`***
+
+```
+Web application security is the process of protecting websites and online services against different security threats that exploit vulnerabilities in an application’s code. Common targets for web application attacks are content management systems (e.g., WordPress), database administration tools (e.g., phpMyAdmin) and SaaS applications.
+```
+> Perpetrators consider web applications high-priority targets due to:
+
+```
+    > The inherent complexity of their source code, which increases the likelihood of unattended vulnerabilities and malicious code manipulation.
+
+    > High value rewards, including sensitive private data collected from successful source code manipulation.
+
+    > Ease of execution, as most attacks can be easily automated and launched indiscriminately against thousands, or even tens or hundreds of thousands of targets at a time.
+```
+
+```
+Organizations failing to secure their web applications run the risk of being attacked. Among other consequences, this can result in information theft, damaged client relationships, revoked licenses and legal proceedings.
+```
+
+### _`1. Web application vulnerabilities `_
+```
+Web application vulnerabilities are typically the result of a lack of input/output sanitization, which are often exploited to either manipulate source code or gain unauthorized access.
+```
+> Such vulnerabilities enable the use of different attack vectors, including:
+ 
+### _`1. SQL Injection `_
+```
+Occurs when a perpetrator uses malicious SQL code to manipulate a backend database so it reveals information. Consequences include the unauthorized viewing of lists, deletion of tables and unauthorized administrative access.
+```
+
+### _`2. Cross-site Scripting (XSS) `_
+```
+XSS is an injection attack targeting users in order to access accounts, activate Trojans or modify page content. Stored XSS occurs when malicious code is injected directly into an application. Reflected XSStakes place when malicious script is reflected off of an application onto a user’s browser.
+```
+
+### _`3. Remote File Inclusion `_
+```
+A hacker uses this type of attack to remotely inject a file onto a web application server. This can result in the execution of malicious scripts or code within the application, as well as data theft or manipulation.
+```
+### _`4. Cross-site Request Forgery (CSRF) `_
+```
+An attack that could result in an unsolicited transfer of funds, changed passwords or data theft. It’s caused when a malicious web application makes a user’s browser perform an unwanted action in a site to which a user is logged on.
+```
+ 
+<br /><br />
+
+
+## ***`Question :- Difference between web1 and web2 and web3?`***
+<br /><br />
+
+
+## ***`Question :- What is Client Side Rendering?`***
+
+
+
+<br /><br />
+
+## ***`Question :- What is a Singleton Design Pattern?`***
+
+<br /><br />
+
+## ***`Question :- What are the SOLID Principles?`***
+
+<br /><br />
+
+## ***`Question :- What are PSR Rules?`***
+
 <br /><br />
