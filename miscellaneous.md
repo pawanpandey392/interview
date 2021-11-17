@@ -1,14 +1,14 @@
 # **Miscellaneous Interview Questions**
 <br />
 
-<h1><b><i>Question :- What is Cache Busting?</i></b></h1>
-<h2><b><i>Answer - </i></b></h2>
+<h2><b><i>Question :- What is Cache Busting?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 <p>Cache busting is the process of uploading a new file to replace an existing file that is already cached. This is useful because the cache will often take a long time to expire from all of its various locations and cache busting properly ensures that any changes to a file be visible to end users sooner, rather than later.</p>
 
 ### _`1. Filename Versioning :- `_ 
 > It is the method of including the version in the file name, before the type.
-<p>
 
+``` css
     {
         background-image:url(‘back.png’);
     }
@@ -20,12 +20,10 @@
     {
         background-image:url(‘back-3.png’);
     }
-</p>
-
+```
 ### _`2. File Path Versioning :- `_ 
 > It is the process of including the version in the directory or path for the file.
-<p>
-
+``` css
     a. styles/v1/style.css 
         {
             background-image:url(‘back.png’);
@@ -38,12 +36,12 @@
         {
             background-image:url(‘back-newest.png’);
         }
-</p>
+```
 
 ### _`3. Versioning with Query Strings :- `_ 
-```
-> A Query String is a unique set of parameters that can identify separate files within the same file hierarchical path. This is usually done by adding a '?' followed by the string that indicates the differences to the end of the file. This can be used for cache busting because most cache mechanisms will use the query string as a separate file.
+<p>A Query String is a unique set of parameters that can identify separate files within the same file hierarchical path. This is usually done by adding a '?' followed by the string that indicates the differences to the end of the file. This can be used for cache busting because most cache mechanisms will use the query string as a separate file.</p>
 
+``` css
     a. style.css
         {
             background-image:url(‘back.png’);
@@ -57,201 +55,178 @@
             background-image:url(‘back-newest.png’);
         }
 ```
-
 <br />
 
-## ***`Question :- What is Semantic Versioning?`***
-
-```
-> Semantic versioning or SemVer is the ideal way of versioning packages. They are usually written like 1.4.5 (major.minor.patch)
-```
+<h2><b><i>Question :- What is Semantic Versioning?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+<p>
+Semantic versioning or SemVer is the ideal way of versioning packages. They are usually written like 1.4.5 (major.minor.patch)
+</p>
 
 ### _`1a. Bug fix/patch version :- `_ 
-```
+<p>
 Includes bug fixes/documentation spelling mistakes etc.
-```
+</p>
+
 ### _`1b. Minor version :- `_ 
-```
+<p>
 Includes additions of functions or API which does not break anything from the older versions So anything that runs on v1.1.0 should work on v1.9.0 as well.
-```
+</p>
+
 ### _`1c. Major version :- `_ 
-```
+<p>
 Includes version which breaks stuff. It can include removing APIs or changing names of functions so anything that works on v1.0.0 may not necessarily work on v2.0.0
-```
+</p>
 
 <br />
 
-## ***`Question :- What is API Versioning?`***
-
-```
+<h2><b><i>Question :- What is API Versioning?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+<p>
 API versioning is the practice of transparently managing changes to your API. Versioning is effective communication around changes to your API, so consumers know what to expect from it. You are delivering data to the public in some fashion and you need to communicate when you change the way that data is delivered.
-```
+</p>
 
 ### _`Q. When to version? :- `_ 
-```
+<p>
 APIs only need to be up-versioned when a breaking change is made.
-```
+</p>
+
 > Breaking changes include:
-```
-> a change in the format of the response data for one or more calls
-> a change in the request or response type (i.e. changing an integer to a float)
-> removing any part of the API.
-```
 
-```
---- Breaking changes should always result in a change to the major version number for an API or content response type.
++ A change in the format of the response data for one or more calls
++ A change in the request or response type (i.e. changing an integer to a float)
++ Removing any part of the API.
 
---- Non-breaking changes, such as adding new endpoints or new response parameters, do not require a change to the major version number.
-```
+<p>Breaking changes should always result in a change to the major version number for an API or content response type.
+</p>
+<p>Non-breaking changes, such as adding new endpoints or new response parameters, do not require a change to the major version number.
+</p>
 
 ### _`Q. How to version a REST API? :- `_
 
-> 1a. URI Versioning
-```
-Using the URI is the most straightforward approach (and most commonly used as well) though it does violate the principle that a URI should refer to a unique resource. You are also guaranteed to break client integration when a version is updated.
-```
-```
-http://api.example.com/v1
-http://apiv1.example.com
-```
-```
-The version need not be numeric, nor specified using the “v[x]” syntax.
++ URI Versioning
+    <p>Using the URI is the most straightforward approach (and most commonly used as well) though it does violate the principle that a URI should refer to a unique resource. You are also guaranteed to break client integration when a version is updated.</p>
+    
+    ```
+    http://api.example.com/v1
+    http://apiv1.example.com
+    ```
+    <p>The version need not be numeric, nor specified using the “v[x]” syntax.</p>
 
-Alternatives include dates, project names, seasons, or other identifiers that are meaningful enough to the team producing the APIs and flexible enough to change as the versions change.
-```
+    <p>Alternatives include dates, project names, seasons, or other identifiers that are meaningful enough to the team producing the APIs and flexible enough to change as the versions change.</p>
 
-> 1b. Versioning using Custom Request Header
-```
-A custom header (e.g. Accept-version) allows you to preserve your URIs between versions though it is effectively a duplicate of the content negotiation behavior implemented by the existing Accept header.
-```
-```
-Accept-version: v1
-Accept-version: v2
-```
++ Versioning using Custom Request Header
+    <p>A custom header (e.g. Accept-version) allows you to preserve your URIs between versions though it is effectively a duplicate of the content negotiation behavior implemented by the existing Accept header.</p>
 
-> 1c. Versioning using “Accept” header
-```
-Content negotiation may let you preserve a clean set of URLs, but you still have to deal with the complexity of serving different versions of content somewhere.
+    ```
+    Accept-version: v1
+    Accept-version: v2
+    ```
++ Versioning using “Accept” header
+    <p>Content negotiation may let you preserve a clean set of URLs, but you still have to deal with the complexity of serving different versions of content somewhere.</p>
 
-This burden tends to be moved up the stack to your API controllers which become responsible for figuring out which version of a resource to send.
+    <p>This burden tends to be moved up the stack to your API controllers which become responsible for figuring out which version of a resource to send.</p>
 
-The result tends to be a more complex API as clients have to know which headers to specify before requesting a resource.
-```
-```
-Accept: application/vnd.example.v1+json
-Accept: application/vnd.example+json;version=1.0
-```
+    <p>The result tends to be a more complex API as clients have to know which headers to specify before requesting a resource.</p>
 
-```
-In the real world, an API is never going to be completely stable. So it’s important how this change is managed.
+    ```
+    Accept: application/vnd.example.v1+json
+    Accept: application/vnd.example+json;version=1.0
+    ```
+    <p>In the real world, an API is never going to be completely stable. So it’s important how this change is managed.</p>
 
-A well-documented and gradual deprecation of API can be an acceptable practice for most APIs.
-```
+    <p>A well-documented and gradual deprecation of API can be an acceptable practice for most APIs.</p>
+<br />
 
-<br /><br />
+<h2><b><i>Question :- What is Content Negotiation?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+<p>
+Generally, the REST resources can have multiple presentations, mostly because there may be different clients expecting different representations. Asking for a suitable presentation by a client is referred to as content negotiation.</p>
 
-## ***`Question :- What is Content Negotiation?`***
-```
-Generally, the REST resources can have multiple presentations, mostly because there may be different clients expecting different representations. Asking for a suitable presentation by a client is referred to as content negotiation.
-
-HTTP has provisions for several mechanisms for “content negotiation” — the process of selecting the best representation for a given response when there are multiple representations available.
-```
+<p>HTTP has provisions for several mechanisms for “content negotiation” — the process of selecting the best representation for a given response when there are multiple representations available.</p>
 
 ### _`1. Server-driven Vs Agent-driven Content Negotiation :- `_ 
-```
-If the selection of the best representation for a response is made by an algorithm located at the server, it is called server-driven negotiation. If that selection is made at the agent or client-side, it is called agent-driven negotiation.
+<p>
+If the selection of the best representation for a response is made by an algorithm located at the server, it is called server-driven negotiation. If that selection is made at the agent or client-side, it is called agent-driven negotiation.</p>
 
-Practically, we will NOT find much usage of server-side negotiations because, in that way, we have to make a lot of assumptions about the client’s expectations.
+<p>Practically, we will NOT find much usage of server-side negotiations because, in that way, we have to make a lot of assumptions about the client’s expectations.</p>
 
-Few things, like the client context or how the client will use the resource representation, are almost impossible to determine. Also, the server-driven negotiation makes the server-side code more complex, unnecessarily.
+<p>Few things, like the client context or how the client will use the resource representation, are almost impossible to determine. Also, the server-driven negotiation makes the server-side code more complex, unnecessarily.</p>
 
-So, most REST API implementations rely on agent-driven content negotiations. Agent-driven content negotiation depends on the usage of HTTP request headers or resource URI patterns.
-```
+<p>So, most REST API implementations rely on agent-driven content negotiations. Agent-driven content negotiation depends on the usage of HTTP request headers or resource URI patterns.</p>
 
 ### _`1a. Using HTTP Headers :- `_ 
-```
-At server side, an incoming request may have an entity attached to it. To determine it’s type, server uses the HTTP request header Content-Type. Some common examples of content types are “text/plain”, “application/xml”, “text/html”, “application/json”, “image/gif”, and “image/jpeg”.
-```
+<p>At server side, an incoming request may have an entity attached to it. To determine it’s type, server uses the HTTP request header Content-Type. Some common examples of content types are “text/plain”, “application/xml”, “text/html”, “application/json”, “image/gif”, and “image/jpeg”.</p>
+
 ```
 Content-Type: application/json
 ```
-```
-Similarly, to determine what type of representation is desired on the client-side, an HTTP header ACCEPT is used. It will have one of the values mentioned for Content-Type above.
-```
+<p>Similarly, to determine what type of representation is desired on the client-side, an HTTP header ACCEPT is used. It will have one of the values mentioned for Content-Type above.</p>
+
 ```
 Accept: application/json
 ```
-```
-Generally, if no Accept header is present in the request, the server can send pre-configured default representation type.
-```
+<p>Generally, if no Accept header is present in the request, the server can send pre-configured default representation type.</p>
+
 > Implementing Accept header based content negotiation is most used and recommened way.
 
 ### _`1b. Using URL Patterns :- `_ 
-```
-Another way to pass content type information to the server, the client may use the specific extension in resource URIs. For example, a client can ask for details using:
-```
+<p>Another way to pass content type information to the server, the client may use the specific extension in resource URIs. For example, a client can ask for details using:</p>
+
 ```
 http://rest.api.com/v1/employees/20423.xml
 http://rest.api.com/v1/employees/20423.json
 ```
-```
-In the above case, the first request URI will return an XML response whether the second request URI will return a JSON response.
-```
+<p>In the above case, the first request URI will return an XML response whether the second request URI will return a JSON response.</p>
 
 ### _`2. Defining Preferences :- `_ 
+<p>It is possible to have multiple values in Accept header using the ‘q’ parameter i.e. relative quality factor.</p>
 
-```
-It is possible to have multiple values in Accept header using the ‘q’ parameter i.e. relative quality factor.
+<p>The client may want to provide multiple values in the accept header when the client is not sure if its desired representation is present or supported by the server at that time. [RFC 2296]
 
-The client may want to provide multiple values in the accept header when the client is not sure if its desired representation is present or supported by the server at that time. [RFC 2296]
+For example,</p>
 
-For example,
-```
 ```
 Accept: application/json,application/xml;q=0.9,*/*;q=0.8
 ```
-```
-Above Accept header allows you to ask the server a JSON format (first choice). If it can’t, perhaps it could return XML format (the second choice). If it’s still not possible, let it return what it can.
+<p>Above Accept header allows you to ask the server a JSON format (first choice). If it can’t, perhaps it could return XML format (the second choice). If it’s still not possible, let it return what it can.</p>
 
-The preference order is defined through the q parameter with values from 0 to 1. When nothing is specified, the implicit default value is 1.
-```
-<br /><br />
+<p>The preference order is defined through the q parameter with values from 0 to 1. When nothing is specified, the implicit default value is 1.</p>
+<br />
 
-## ***`Question :- What is REST API Compression?`***
-```
+<h2><b><i>Question :- What is REST API Compression?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+<p>
 REST APIs can return the resource representations in several formats such as XML, JSON, HTML, or even plain text. All such forms can be compressed to a lesser number of bytes to save bandwidth over the network.
 
 Different protocols use different techniques to enable compression and notify the clients about the compression scheme – so that the client can decompress it before consuming the representations.
-```
+</p>
+
 > Compression, like encryption, is something that happens to the resource representation in transit and must be undone before the client can use the representation.
 
-```
+<p>
 HTTP is the most widely used protocol for REST – so we are taking the example of HTTP-specific response compression.
-```
+</p>
 
 ### _`1. Compression Related Request/Response Headers :- `_ 
 
 ### _`1a. Accept-Encoding :- `_ 
-```
-While requesting resource representations – along with an HTTP request, the client sends an Accept-Encoding header that says what kind of compression algorithms the client understands.
+<p>While requesting resource representations – along with an HTTP request, the client sends an Accept-Encoding header that says what kind of compression algorithms the client understands.
 
 The two standard values for Accept-Encoding are compress and gzip.
 
-A sample request with accept-encoding, the header looks like this :
-```
+A sample request with accept-encoding, the header looks like this :</p>
 
-```
+``` http
 GET        /employees         HTTP/1.1
 Host:     www.domain.com
 Accept:     text/html
 Accept-Encoding:     gzip,compress
 ```
 
-```
-Another possible usage of accept-encoding may be:
-```
+<p>Another possible usage of accept-encoding may be:</p>
 
-```
+``` http
 Accept-Encoding: compress, gzip
 Accept-Encoding:
 Accept-Encoding: *
@@ -259,81 +234,63 @@ Accept-Encoding: compress;q=0.5, gzip;q=1.0
 Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0
 ```
 
-```
-If an Accept-Encoding the field is present in a request, and if the server cannot send a response that is acceptable according to the Accept-Encoding header, then the server SHOULD send an error response with the 406 (Not Acceptable) status code.
-```
+<p>If an Accept-Encoding the field is present in a request, and if the server cannot send a response that is acceptable according to the Accept-Encoding header, then the server SHOULD send an error response with the 406 (Not Acceptable) status code.</p>
 
 ### _`1b. Content-Encoding :- `_ 
+<p>If the server understands one of the compression algorithms from Accept-Encoding, it can use that algorithm to compress the representation before serving it. When successfully compressed, the server lets know the client of encoding scheme by another HTTP header i.e. Content-Encoding.
+</p>
 
-```
-If the server understands one of the compression algorithms from Accept-Encoding, it can use that algorithm to compress the representation before serving it. When successfully compressed, the server lets know the client of encoding scheme by another HTTP header i.e. Content-Encoding.
-```
-
-```
+``` http
 200 OK
 Content-Type:     text/html
 Content-Encoding:     gzip
 ```
 
-```
-If the content-coding of an entity in a request message is not acceptable to the origin server, the server SHOULD respond with a status code of 415 (Unsupported Media Type). If multiple content encodings have been applied to an entity, all the encodings MUST be listed in the order in which they were used.
+<p>If the content-coding of an entity in a request message is not acceptable to the origin server, the server SHOULD respond with a status code of 415 (Unsupported Media Type). If multiple content encodings have been applied to an entity, all the encodings MUST be listed in the order in which they were used.</p>
 
-Please note that the original media type for request and response are not impacted whether compression is requested or not.
+<p>Please note that the original media type for request and response are not impacted whether compression is requested or not.</p>
 
-Compression can save a lot of bandwidth, with minimal cost without additional complexity. Also, you may know that most web browsers automatically request compressed representations from website host servers – using the above headers.
-```
+<p>Compression can save a lot of bandwidth, with minimal cost without additional complexity. Also, you may know that most web browsers automatically request compressed representations from website host servers – using the above headers.</p>
+<br />
 
-<br /><br />
-
-## ***`Question :- Difference between HTTP/2 vs. HTTP/1.1?`***
+<h2><b><i>Question :- Difference between HTTP/2 vs. HTTP/1.1?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ### _`1a. What is HTTP? Why is HTTP/2 faster than HTTP/1.1?`_
+<p>HTTP stands for hypertext transfer protocol, and it is the basis for almost all web applications. More specifically, HTTP is the method computers and servers use to request and send information. For instance, when someone navigates to cloudflare.com on their laptop, their web browser sends an HTTP request to the Cloudflare servers for the content that appears on the page. Then, Cloudflare servers send HTTP responses with the text, images, and formatting that the browser displays to the user.</p>
 
-```
-HTTP stands for hypertext transfer protocol, and it is the basis for almost all web applications. More specifically, HTTP is the method computers and servers use to request and send information. For instance, when someone navigates to cloudflare.com on their laptop, their web browser sends an HTTP request to the Cloudflare servers for the content that appears on the page. Then, Cloudflare servers send HTTP responses with the text, images, and formatting that the browser displays to the user.
+<p>The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created.</p>
 
-The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created.
-
-HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. One of the ways in which HTTP/2 is faster is in how it prioritizes content during the loading process.
-```
+<p>HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. One of the ways in which HTTP/2 is faster is in how it prioritizes content during the loading process.</p>
 
 ### _`1a. What is prioritization?`_
+<p>
+In the context of web performance, prioritization refers to the order in which pieces of content are loaded. Suppose a user visits a news website and navigates to an article. Should the photo at the top of the article load first? Should the text of the article load first? Should the banner ads load first?</p>
 
-```
-In the context of web performance, prioritization refers to the order in which pieces of content are loaded. Suppose a user visits a news website and navigates to an article. Should the photo at the top of the article load first? Should the text of the article load first? Should the banner ads load first?
+<p>Prioritization affects a webpage's load time. For example, certain resources, like large JavaScript files, may block the rest of the page from loading if they have to load first. More of the page can load at once if these render-blocking resources load last.</p>
 
-Prioritization affects a webpage's load time. For example, certain resources, like large JavaScript files, may block the rest of the page from loading if they have to load first. More of the page can load at once if these render-blocking resources load last.
-
-In addition, the order in which these page resources load affects how the user perceives page load time. If only behind-the-scenes content (like a CSS file) or content the user can't see immediately (like banner ads at the bottom of the page) loads first, the user will think the page is not loading at all. If the content that's most important to the user loads first, such as the image at the top of the page, then the user will perceive the page as loading faster.
-```
+<p>In addition, the order in which these page resources load affects how the user perceives page load time. If only behind-the-scenes content (like a CSS file) or content the user can't see immediately (like banner ads at the bottom of the page) loads first, the user will think the page is not loading at all. If the content that's most important to the user loads first, such as the image at the top of the page, then the user will perceive the page as loading faster.</p>
 
 ### _`1a. How does prioritization in HTTP/2 affect performance?`_
+<p>In HTTP/2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not possible in HTTP/1.1.</p>
 
-```
-In HTTP/2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not possible in HTTP/1.1.
+<p>HTTP/2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time. In HTTP/2, when a client makes a request for a webpage, the server sends several streams of data to the client at once, instead of sending one thing after another. This method of data delivery is known as multiplexing. Developers can assign each of these data streams a different weighted value, and the value tells the client which data stream to render first.</p>
 
-HTTP/2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time. In HTTP/2, when a client makes a request for a webpage, the server sends several streams of data to the client at once, instead of sending one thing after another. This method of data delivery is known as multiplexing. Developers can assign each of these data streams a different weighted value, and the value tells the client which data stream to render first.
+<p>Imagine that Alice wants to read a novel that her friend Bob wrote, but both Alice and Bob only communicate through the regular mail. Alice sends a letter to Bob and asks Bob to send her his novel. Bob decides to send the novel HTTP/1.1-style: He mails one chapter at a time, and he only mails the next chapter after receiving a reply letter from Alice confirming that she received the previous chapter. Using this method of content delivery, it takes Alice many weeks to read Bob's novel.</p>
 
-Imagine that Alice wants to read a novel that her friend Bob wrote, but both Alice and Bob only communicate through the regular mail. Alice sends a letter to Bob and asks Bob to send her his novel. Bob decides to send the novel HTTP/1.1-style: He mails one chapter at a time, and he only mails the next chapter after receiving a reply letter from Alice confirming that she received the previous chapter. Using this method of content delivery, it takes Alice many weeks to read Bob's novel.
+<p>Now imagine that Bob decides to send Alice his novel HTTP/2-style: In this case, he sends each chapter of the novel separately (to stay within the postal service's size limits) but all at the same time. He also numbers each chapter: Chapter 1, Chapter 2, etc. Now, Alice receives the novel all at once and can assemble it in the correct order on her own time. If a chapter is missing, she may send a quick reply asking for that specific chapter, but otherwise the process is complete, and Alice can read the novel in just a few days.</p>
 
-Now imagine that Bob decides to send Alice his novel HTTP/2-style: In this case, he sends each chapter of the novel separately (to stay within the postal service's size limits) but all at the same time. He also numbers each chapter: Chapter 1, Chapter 2, etc. Now, Alice receives the novel all at once and can assemble it in the correct order on her own time. If a chapter is missing, she may send a quick reply asking for that specific chapter, but otherwise the process is complete, and Alice can read the novel in just a few days.
-
-In HTTP/2, data is sent all at once, much like Bob when he sends Alice multiple chapters at once. And just like Bob, developers get to number the chapters in HTTP/2. They can decide if the text of a webpage loads first, or the CSS files, or the JavaScript, or whatever they feel is most important for the user experience.
-```
+<p>In HTTP/2, data is sent all at once, much like Bob when he sends Alice multiple chapters at once. And just like Bob, developers get to number the chapters in HTTP/2. They can decide if the text of a webpage loads first, or the CSS files, or the JavaScript, or whatever they feel is most important for the user experience.</p>
 
 ### _`1a. What are the other differences between HTTP/2 and HTTP/1.1 that impact performance?`_
-> Multiplexing
-```
-HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.
-```
-> Server push
-```
-Typically, a server only serves content to a client device if the client asks for it. However, this approach is not always practical for modern webpages, which often involve several dozen separate resources that the client must request. HTTP/2 solves this problem by allowing a server to "push" content to a client before the client asks for it. The server also sends a message letting the client know what pushed content to expect – like if Bob had sent Alice a Table of Contents of his novel before sending the whole thing.
-```
-> Header compression
-```
-Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.
-```
++ Multiplexing
+    <p>HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.</p>
+
++ Server push
+    <p>Typically, a server only serves content to a client device if the client asks for it. However, this approach is not always practical for modern webpages, which often involve several dozen separate resources that the client must request. HTTP/2 solves this problem by allowing a server to "push" content to a client before the client asks for it. The server also sends a message letting the client know what pushed content to expect – like if Bob had sent Alice a Table of Contents of his novel before sending the whole thing.</p>
+
++ Header compression
+    <p>Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.</p>
 
 ### _`1a. What is HTTP/3?`_
 ```
