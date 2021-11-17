@@ -293,57 +293,47 @@ In the context of web performance, prioritization refers to the order in which p
     <p>Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.</p>
 
 ### _`1a. What is HTTP/3?`_
-```
-HTTP/3 is the next proposed version of the HTTP protocol. HTTP/3 does not have wide adoption on the web yet, but it is growing in usage. The key difference between HTTP/3 and previous versions of the protocol is that HTTP/3 runs over QUIC instead of TCP. QUIC is a faster and more secure transport layer protocol that is designed for the needs of the modern Internet.
-```
+<p>HTTP/3 is the next proposed version of the HTTP protocol. HTTP/3 does not have wide adoption on the web yet, but it is growing in usage. The key difference between HTTP/3 and previous versions of the protocol is that HTTP/3 runs over QUIC instead of TCP. QUIC is a faster and more secure transport layer protocol that is designed for the needs of the modern Internet.</p>
+<br />
 
-<br /><br />
+<h2><b><i>Question :- What is Tree Shaking in Webpack and how does it works?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+<p>
+Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. It relies on the static structure of ES2015 module syntax, i.e. import and export. The name and concept have been popularized by the ES2015 module bundler rollup.</p>
 
-
-
-## ***`Question :- What is Tree Shaking in Webpack and how does it works?`***
-```
-Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. It relies on the static structure of ES2015 module syntax, i.e. import and export. The name and concept have been popularized by the ES2015 module bundler rollup.
-```
 ### _`1a. Clarifying tree shaking and sideEffects :- `_
-```
-The sideEffects and usedExports (more known as tree shaking) optimizations are two different things.
+<p>The sideEffects and usedExports (more known as tree shaking) optimizations are two different things.</p>
 
-sideEffects is much more effective since it allows to skip whole modules/files and the complete subtree.
+<p>sideEffects is much more effective since it allows to skip whole modules/files and the complete subtree.</p>
 
-usedExports relies on terser to detect side effects in statements. It is a difficult task in JavaScript and not as effective as straightforward sideEffects flag. It also can't skip subtree/dependencies since the spec says that side effects need to be evaluated. While exporting function works fine, React's Higher Order Components (HOC) are problematic in this regard.
-```
+<p>usedExports relies on terser to detect side effects in statements. It is a difficult task in JavaScript and not as effective as straightforward sideEffects flag. It also can't skip subtree/dependencies since the spec says that side effects need to be evaluated. While exporting function works fine, React's Higher Order Components (HOC) are problematic in this regard.</p>
+<br />
 
-<br /><br />
+<h2><b><i>Question :- What is the Box Model?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
-## ***`Question :- What is the Box Model?`***
-```
-All HTML elements can be considered as boxes.
-```
+<p>All HTML elements can be considered as boxes.</p>
 
 ### _`The CSS Box Model :- `_
-```
-In CSS, the term "box model" is used when talking about design and layout.
+<p>In CSS, the term "box model" is used when talking about design and layout.</p>
 
-The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:
+<p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:</p>
 
-```
 ### _`Explanation of the different parts :- `_
 
-```
-> Content - The content of the box, where text and images appear
++ Content - The content of the box, where text and images appear
 
-> Padding - Clears an area around the content. The padding is transparent
++ Padding - Clears an area around the content. The padding is transparent
 
-> Border - A border that goes around the padding and content
++ Border - A border that goes around the padding and content
 
-> Margin - Clears an area outside the border. The margin is transparent
++ Margin - Clears an area outside the border. The margin is transparent
 
-The box model allows us to add a border around elements, and to define space between elements. 
-```
+<p>The box model allows us to add a border around elements, and to define space between elements. 
+</p>
+
 ### _`Demonstration of the box model :- `_
-
-```
+``` css
 div {
   width: 300px;
   border: 15px solid green;
@@ -351,125 +341,102 @@ div {
   margin: 20px;
 }
 ```
+<br />
 
-<br /><br />
+<h2><b><i>Question :- What are the different properties of position attribute in css?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+<p>There are five different position values:</p>
 
-## ***`Question :- What are the different properties of position attribute in css?`***
-```
-There are five different position values:
-    1. static.
-    2. relative.
-    3. fixed.
-    4. absolute.
-    5. sticky.
-```
++ static
++ relative
++ fixed
++ absolute
++ sticky
+<br />
 
-<br /><br />
+<h2><b><i>Question :- What is Server Side Rendering? What are the uses of it?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
-## ***`Question :- What is Server Side Rendering? What are the uses of it?`***
-```
-Server-side rendering refers to an application’s ability to display the web-page on the server rather than rendering it in the browser. When a website’s JavaScript is rendered on the website’s server, a fully rendered page is sent to the client and the client’s JavaScript bundle engages and enables the Single Page Application framework to operate.
-```
+<p>Server-side rendering refers to an application’s ability to display the web-page on the server rather than rendering it in the browser. When a website’s JavaScript is rendered on the website’s server, a fully rendered page is sent to the client and the client’s JavaScript bundle engages and enables the Single Page Application framework to operate.</p>
 
-```
-Server-side rendering (SSR) is an application’s ability to convert HTML files on the server into a fully rendered HTML page for the client. The web browser submits a request for information from the server, which instantly responds by sending a fully rendered page to the client. Search engines can crawl and index content prior to delivery, which is beneficial for Search Engine Optimization purposes.
+<p>Server-side rendering (SSR) is an application’s ability to convert HTML files on the server into a fully rendered HTML page for the client. The web browser submits a request for information from the server, which instantly responds by sending a fully rendered page to the client. Search engines can crawl and index content prior to delivery, which is beneficial for Search Engine Optimization purposes.</p>
 
-Popular examples of server-side rendering JavaScript frameworks include: Angular server side rendering, ejs server side rendering, server side rendering Express, Gatsby server side rendering, Google server side rendering, NestJS server side rendering, Next server side rendering, Nuxt server side rendering, React server side rendering, and Vue server side rendering.
-```
+<p>Popular examples of server-side rendering JavaScript frameworks include: Angular server side rendering, ejs server side rendering, server side rendering Express, Gatsby server side rendering, Google server side rendering, NestJS server side rendering, Next server side rendering, Nuxt server side rendering, React server side rendering, and Vue server side rendering.</p>
 
 ### _`Question. What are the Benefits of Server-Side Rendering?`_
+<p>Some server-side rendering advantages include:</p>
 
-```
-Some server-side rendering advantages include:
++ A server-side rendered application enables pages to load faster, improving the user experience.
 
-    > A server-side rendered application enables pages to load faster, improving the user experience.
++ When rendering server-side, search engines can easily index and crawl content because the content can be rendered before the page is loaded, which is ideal for SEO. 
 
-    > When rendering server-side, search engines can easily index and crawl content because the content can be rendered before the page is loaded, which is ideal for SEO. 
++ Webpages are correctly indexed because web browsers prioritize web pages with faster load times.
 
-    > Webpages are correctly indexed because web browsers prioritize web pages with faster load times.
-
-    > Rendering server-side helps efficiently load webpages for users with slow internet connection or outdated devices.
-```
++ Rendering server-side helps efficiently load webpages for users with slow internet connection or outdated devices.
 
 ### _`Question. What are the Risks of Server-Side Rendering?`_
 
-```
-Server-side rendering disadvantages may include:
+<p>Server-side rendering disadvantages may include:</p>
 
-    > Rendering server-side can be costly and resource-intensive as it is not the default for JavaScript websites, and the server takes on the full burden of rendering content for users and bots.
-    
-    > While rendering static HTML server-side is efficient, rendering bigger, more complex applications server-side can increase load times due to the bottleneck.
-    
-    > Server-side rendering may not be compatible with third-party JavaScript code. 
++ Rendering server-side can be costly and resource-intensive as it is not the default for JavaScript websites, and the server takes on the full burden of rendering content for users and bots.
 
-    > Rendering server-side may be ideal for static site generation, but frequent server requests and full page reloads can result in overall slower page rendering in more complex applications.
-```
++ While rendering static HTML server-side is efficient, rendering bigger, more complex applications server-side can increase load times due to the bottleneck.
+
++ Server-side rendering may not be compatible with third-party JavaScript code. 
+
++ Rendering server-side may be ideal for static site generation, but frequent server requests and full page reloads can result in overall slower page rendering in more complex applications.</p>
 
 ### _`Question. Server-Side Rendering vs Client-Side Rendering?`_
-```
-In client-server rendering, rather than receiving all of the content from the HTML document, content is rendered in the browser using the client-side JavaScript library. The browser does not make a new request to the server when a new page is loaded. Search engine rankings may be negatively impacted as the content is not rendered until the page is loaded on the browser, however, website rendering tends to be faster in client-side rendered app. In considering server side vs client side rendering, the developer will assess factors such as the scale of the project, the complexity of the application, the number of users, and user experience priorities.
-```
+<p>
+In client-server rendering, rather than receiving all of the content from the HTML document, content is rendered in the browser using the client-side JavaScript library. The browser does not make a new request to the server when a new page is loaded. Search engine rankings may be negatively impacted as the content is not rendered until the page is loaded on the browser, however, website rendering tends to be faster in client-side rendered app. In considering server side vs client side rendering, the developer will assess factors such as the scale of the project, the complexity of the application, the number of users, and user experience priorities.</p>
+<br />
 
-<br /><br />
-
-
-
-## ***`Question :- What is Statelessness in REST APIs?`***
+<h2><b><i>Question :- What is Statelessness in REST APIs?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ### _`1. Statelessness`_
+<p>As per the REST (REpresentational “State” Transfer) architecture, the server does not store any state about the client session on the server-side. This restriction is called Statelessness.</p>
 
-```
-As per the REST (REpresentational “State” Transfer) architecture, the server does not store any state about the client session on the server-side. This restriction is called Statelessness.
+<p>Each request from the client to the server must contain all of the necessary information to understand the request. The server cannot take advantage of any stored context on the server.</p>
 
-Each request from the client to the server must contain all of the necessary information to understand the request. The server cannot take advantage of any stored context on the server.
+<p>The application’s session state is therefore kept entirely on the client. The client is responsible for storing and handling the session related information on its own side.</p>
 
-The application’s session state is therefore kept entirely on the client. The client is responsible for storing and handling the session related information on its own side.
-
-This also means that the client is responsible for sending any state information to the server whenever it is needed. There should not be any session affinity or sticky session between the client and the server.
-```
+<p>This also means that the client is responsible for sending any state information to the server whenever it is needed. There should not be any session affinity or sticky session between the client and the server.</p>
 
 > Statelessness means that every HTTP request happens in complete isolation. When the client makes an HTTP request, it includes all information necessary for the server to fulfill the request.
 
 > The server never relies on information from previous requests from the client. If any such information is important then the client will send that as part of the current request.
 
-```
-To enable clients to access these stateless APIs, it is necessary that servers also should include every piece of information that the client may need to create/maintain the state on its side.
+<p>
+To enable clients to access these stateless APIs, it is necessary that servers also should include every piece of information that the client may need to create/maintain the state on its side.</p>
 
-For becoming stateless, do not store even authentication/authorization details of the client. Provide authentication credentials with each request.
+<p>For becoming stateless, do not store even authentication/authorization details of the client. Provide authentication credentials with each request.</p>
 
-Thus each request MUST be stand alone and should not be affected by the previous conversation that happened with the same client in past.
-```
+<p>Thus each request MUST be stand alone and should not be affected by the previous conversation that happened with the same client in past.</p>
 
 ### _`2. Application State vs Resource State`_
+<p>It is important to understand the between the application state and the resource state. Both are completely different things.</p>
 
-```
-It is important to understand the between the application state and the resource state. Both are completely different things.
+<p>Application state is server-side data that servers store to identify incoming client requests, their previous interaction details, and current context information.</p>
 
-Application state is server-side data that servers store to identify incoming client requests, their previous interaction details, and current context information.
-
-Resource state is the current state of a resource on a server at any point in time – and it has nothing to do with the interaction between client and server. It is what we get as a response from the server as the API response. We refer to it as resource representation.
-```
+<p>Resource state is the current state of a resource on a server at any point in time – and it has nothing to do with the interaction between client and server. It is what we get as a response from the server as the API response. We refer to it as resource representation.</p>
 
 > REST statelessness means being free from the application state.
 
 ### _`3. Advantages of Stateless APIs`_
+<p>There are some very noticeable advantages of having REST APIs stateless.</p>
 
-```
-There are some very noticeable advantages of having REST APIs stateless.
++ Statelessness helps in scaling the APIs to millions of concurrent users by deploying it to multiple servers. Any server can handle any request because there is no session related dependency.
 
-    > Statelessness helps in scaling the APIs to millions of concurrent users by deploying it to multiple servers. Any server can handle any request because there is no session related dependency.
++ Being stateless makes REST APIs less complex – by removing all server-side state synchronization logic.
 
-    > Being stateless makes REST APIs less complex – by removing all server-side state synchronization logic.
++ A stateless API is also easy to cache as well. Specific softwares can decide whether or not to cache the result of an HTTP request just by looking at that one request. There’s no nagging uncertainty that state from a previous request might affect the cacheability of this one. It improves the performance of applications.
 
-    > A stateless API is also easy to cache as well. Specific softwares can decide whether or not to cache the result of an HTTP request just by looking at that one request. There’s no nagging uncertainty that state from a previous request might affect the cacheability of this one. It improves the performance of applications.
++ The server never loses track of “where” each client is in the application because the client sends all necessary information with each request.
+<br />
 
-    > The server never loses track of “where” each client is in the application because the client sends all necessary information with each request.
-
-```
-
-<br /><br />
-
-## ***`Question :- REST API Security Essentials?`***
+<h2><b><i>Question :- REST API Security Essentials?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ```
 REST API Security isn’t an afterthought. It has to be an integral part of any development project and also for REST APIs.
@@ -559,11 +526,11 @@ Validate request parameters on the very first step, before it reaches applicatio
 
 In API response, send relevant error messages and examples of correct input format to improve user experience.
 ```
-<br /><br />
+<br />
 
-# **Incomplete Interview Questions**
+<h2><b><i>Question :- What is Lazy & Eager Loading?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
-## ***`Question :- What is Lazy & Eager Loading?`***
 ### _`1. What is Lazy Loading?`_
 ```
 Lazy loading is the practice of delaying load or initialization of resources or objects until they’re actually needed to improve performance and save system resources. For example, if a web page has an image that the user has to scroll down to see, you can display a placeholder and lazy load the full image only when the user arrives to its location.
@@ -655,9 +622,10 @@ When performing lazy loading, consider the following tips:
     4. Offer a noscript in case JavaScript is not available. Otherwise users with JavaScript disabled will not see any lazy-loaded resources.
 ```
 
-<br /><br />
+<br />
 
-## ***`Question :- What is clickjacking?`***
+<h2><b><i>Question :- What is clickjacking?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ```
 Clickjacking is an attack that tricks a user into clicking a webpage element which is invisible or disguised as another element. This can cause users to unwittingly download malware, visit malicious web pages, provide credentials or sensitive information, transfer money, or purchase products online.
@@ -765,7 +733,9 @@ View the HTML page in a browser and evaluate the page as follows:
 However, additional testing is needed to see which anti-clickjacking methods are used on the page, and whether they can be bypassed by attackers.
 ```
 
-## ***`Question :- What is a sticky session?`***
+<h2><b><i>Question :- What is a sticky session?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Session stickiness, a.k.a., session persistence, is a process in which a load balancer creates an affinity between a client and a specific network server for the duration of a session, (i.e., the time a specific IP spends on a website). Using sticky sessions can help improve user experience and optimize network resource usage.
 ```
@@ -815,9 +785,10 @@ Your application generates a cookie that determines the duration of session stic
 This makes sticky sessions more efficient, ensuring that users are never routed to a server after their local session cookie has already expired. However, it’s more complex to implement because it requires additional integration between the load balancer and the application.
 ```
 
-<br /><br />
+<br />
 
-## ***`Question :- What is web application security?`***
+<h2><b><i>Question :- What is web application security?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ```
 Web application security is the process of protecting websites and online services against different security threats that exploit vulnerabilities in an application’s code. Common targets for web application attacks are content management systems (e.g., WordPress), database administration tools (e.g., phpMyAdmin) and SaaS applications.
@@ -861,10 +832,10 @@ A hacker uses this type of attack to remotely inject a file onto a web applicati
 An attack that could result in an unsolicited transfer of funds, changed passwords or data theft. It’s caused when a malicious web application makes a user’s browser perform an unwanted action in a site to which a user is logged on.
 ```
  
-<br /><br />
+<br />
 
-
-## ***`Question :- What are the SOLID Principles?`***
+<h2><b><i>Question :- What are the SOLID Principles?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ### _`1. Single responsibility principle `_
 ```
@@ -900,9 +871,11 @@ A client should never be forced to implement an interface that it doesn’t use 
 Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.
 ```
 
-<br /><br />
+<br />
 
-## ***`Question :- What is Client Side Rendering?`***
+<h2><b><i>Question :- What is Client Side Rendering?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 In a client-Side Rendered web application, JavaScript controls what is displayed on the page. Typically, instead of loading all the web content using the HTML documents, a JavaScript file is included to handle the dynamic architecture of the website loading.
 ```
@@ -944,9 +917,11 @@ There are two main files here, the HTML mark-ups and the JavaScript file.
 In most cases, content is wrapped inside containers divs with root ids to control states and data for the application.
 ```
 
-<br /><br />
+<br />
 
-## ***`Question :- Server-Side Rendering (SSR)?`***
+<h2><b><i>Question :- Server-Side Rendering (SSR)?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 SSR is one of the commonly used rendering solutions. It is pretty much the opposite of the client-side rendering.
 
@@ -958,9 +933,11 @@ Unlike Client-Side Rendering, every subsequent time the user takes action to vis
 ```
 The downside of SSR is that it is resource-intensive and delays the content delivery to the user. It increases the page load time compared to single-paged apps. This is because the server has to render the dynamic content repeatedly. Whereas, on the CSR, the content is static and is displayed almost instant on page reload.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Static-Site Generation (SSG)?`***
+<h2><b><i>Question :- Static-Site Generation (SSG)?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Basically, a Static-Site Generator is a program or a tool used to generate static HTML websites and pages based on raw data and templates. Static-Site Generator automates the process of having to code HTML pages manually.
 
@@ -976,9 +953,11 @@ On the other hand, Static-Site Generation uses the same concept on templates to 
 
 This means that the server makes no API calls to renders any HTML documents. The pages are rendered during the build-up phase. All of your pages are going to load super quickly because they’re already pre-cached, pre-generated, and pre-rendered.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Pros & Cons of Client-Side Rendering?`***
+<h2><b><i>Question :- Pros & Cons of Client-Side Rendering?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. Pros - `_
 ```
 They are fast. Although the site’s first load might be slow, once rendered, other requested pages served instantaneously.
@@ -1000,9 +979,11 @@ This goes hand in hand if your application has a complex UI and a lot of dynamic
 CSR is a good choice for hybrid web applications. A single-page app use-case will be if you want to create a website that will feel more like a mobile app. For example, Twitter, where you don’t have page refresh when you switch pages, you also have spinners when the data is loading, etc.
 ```
 
-<br /><br />
+<br />
 
-## ***`Question :- Pros & Cons of Server-Side Rendering?`***
+<h2><b><i>Question :- Pros & Cons of Server-Side Rendering?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. Pros - `_
 ```
 It is the best when it comes to search engine optimization. Every page is rendered on the website’s server independently. Take a look at a blog website. Each blog post is an independent page and is fetched independently from the server. Thus you can insert meta tags based on the page’s content.
@@ -1019,9 +1000,11 @@ Every web page content is served independently. This would be a great chance to 
 
 It has an overall slow rendering speed, thus it fits well when you have fewer users, a simple UI, few pages, less dynamic data, and less interactivity.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Pros & Cons of Static-Site Generation?`***
+<h2><b><i>Question :- Pros & Cons of Static-Site Generation?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. Pros - `_
 ```
 They are ultra-fast. All of the content of your website is generated as HTML files ahead of time. When a user comes to your application and requests a home page or whatever page they request, the server will quickly respond and load it. It doesn’t have to do any processing. It doesn’t have to generate any HTML; it just serves it.
@@ -1048,9 +1031,10 @@ SSG fits well when you have a lot of static content; it is fast and improves loa
 
 It is considered a good choice for SEO-ranked content.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Web API Security?`***
+<h2><b><i>Question :- Web API Security?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
 ### _`1. What is an API - `_
 ```
@@ -1112,9 +1096,11 @@ Determining the identity of an end user. In a REST API, basic authentication can
 ```
 Determining the resources an identified user can access. An API should be built and tested to prevent users from accessing API functions or operations outside their predefined role. For example, a read-only API client shouldn’t be allowed to access an endpoint providing admin functionality.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Cross site request forgery (CSRF) attack?`***
+<h2><b><i>Question :- Cross site request forgery (CSRF) attack?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. What is CSRF? - `_
 ```
 Cross site request forgery (CSRF), also known as XSRF, Sea Surf or Session Riding, is an attack vector that tricks a web browser into executing an unwanted action in an application to which a user is logged in.
@@ -1182,9 +1168,11 @@ Double submission of cookies is another well-known method to block CSRF. Similar
 
 While effective, tokens can be exposed at a number of points, including in browser history, HTTP log files, network appliances logging the first line of an HTTP request and referrer headers, if the protected site links to an external URL. These potential weak spots make tokens a less than full-proof solution.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Cross site scripting (XSS) attacks?`***
+<h2><b><i>Question :- Cross site scripting (XSS) attacks?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. What is cross site scripting (XSS) - `_
 ```
 Cross site scripting (XSS) is a common attack vector that injects malicious code into a vulnerable web application. XSS differs from other web attack vectors (e.g., SQL injections), in that it does not directly target the application itself. Instead, the users of the web application are the ones at risk.
@@ -1223,9 +1211,11 @@ Unlike a reflected attack, where the script is activated after a link is clicked
 
 From the perpetrator’s standpoint, persistent XSS attacks are relatively harder to execute because of the difficulties in locating both a trafficked website and one with vulnerabilities that enables permanent script embedding.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- SQL (Structured query language) Injection?`***
+<h2><b><i>Question :- SQL (Structured query language) Injection?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. What is SQL injection - `_
 ```
 SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code for backend database manipulation to access information that was not intended to be displayed. This information may include any number of items, including sensitive company data, user lists or private customer details.
@@ -1271,9 +1261,11 @@ As you can gather from the syntax, this query provides the name and description 
 
 3. Out-of-band SQLi. 
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What is Slowloris??`***
+<h2><b><i>Question :- What is Slowloris?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Developed by Robert “RSnake” Hansen, Slowloris is DDoS attack software that enables a single computer to take down a web server. Due the simple yet elegant nature of this attack, it requires minimal bandwidth to implement and affects the target server’s web server only, with almost no side effects on other services and ports.
 
@@ -1299,9 +1291,11 @@ Designed for stealth as well as efficacy, Slowloris can be modified to send diff
 
 More importantly, in the course of an attack, Slowloris can be set to suppress log file creation. This means the attack can catch unmonitored servers off-guard, without any red flags appearing in log file entries.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- Personally Identifiable Information (PII)?`***
+<h2><b><i>Question :- Personally Identifiable Information (PII)?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ### _`1. What Is Personally Identifiable Information (PII) - `_
 ```
 Personally Identifiable Information (PII) is a legal term pertaining to information security environments. While PII has several formal definitions, generally speaking, it is information that can be used by organizations on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context.
@@ -1310,9 +1304,11 @@ Non-sensitive PII can be transmitted in unsecure form without causing harm to an
 
 Organizations use the concept of PII to understand which data they store, process and manage that identifies people and may carry additional responsibility, security requirements, and in some cases legal or compliance requirements.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What is HTML Injection?`***
+<h2><b><i>Question :- What is HTML Injection?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Hypertext Markup Language (HTML) injection is a technique used to take advantage of non-validated input to modify a web page presented by a web application to its users. Attackers take advantage of the fact that the content of a web page is often related to a previous interaction with users. When applications fail to validate user data, an attacker can send HTML-fomatted text to modify site content that gets presented to other users. A specifically crafted query can lead to inclusion in the web page of attacker-controlled HTML elements which change the way the application content gets exposed to the web.
 ```
@@ -1363,9 +1359,11 @@ A typical application use-case for storing one user’s input and showing it to 
 ```
 The most common way of detecting HTML injection is by looking for HTML elements in the incoming HTTP stream that contains the user input. A naïve validation of user input simply removes any HTML-syntax substrings (like tags and links) from any user-supplied text. However, there are many instances where the application expects HTML input from the user. For example, this happens when the user submits visually-formatted text or text containing links to legitimate sites with related content. To avoid false positives, the security mechanism that detects possible injections and protects the application should learn in what application context user input is allowed to contain HTML. Also, it should be able to stop HTML input if it learns that such text is pasted as-is in web page generated by vulnerable application components.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What is the HTTP/2 Protocol?`***
+<h2><b><i>Question :- What is the HTTP/2 Protocol?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Hypertext Transfer Protocol (HTTP) is a set of standards allowing internet users to exchange website information. There have been four HTTP iterations since its introduction in 1991.
 
@@ -1405,9 +1403,11 @@ HTTP/2 servers push likely-to-be-used resources into a browser’s cache, even b
 ```
 Web browsers only support HTTP/2 via encrypted connections, increasing user and application security.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What are load balancing algorithms?`***
+<h2><b><i>Question :- What are load balancing algorithms?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Effective load balancers intelligently determine which device within a given server farm is best able to process an incoming data packet. Doing so requires algorithms programmed to distribute loads in a specific way.
 
@@ -1416,9 +1416,11 @@ Algorithms vary widely, depending on whether a load is distributed on the networ
 Here we will be discussing the pros and cons of several widely used algorithms found in both network and application layer load balancing solutions.
 ```
 > Read the link --> https://www.imperva.com/learn/availability/load-balancing-algorithms/
-<br /><br />
+<br />
 
-## ***`Question :- What is two factor authentication (2FA)?`***
+<h2><b><i>Question :- What is two factor authentication (2FA)?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Two-factor authentication (2FA), a type of multi-factor authentication (MFA), is a security process that cross-verifies users with two different forms of identification, most commonly knowledge of an email address and proof of ownership of a mobile phone.
 
@@ -1429,35 +1431,42 @@ Today, 2FA is commonly employed in online banking websites, social media platfor
 Two-factor authentication also enables businesses and public institutions to be more productive and efficient, allowing employees to perform remote tasks with far less security concerns.
 ```
 > Read the link --> https://www.imperva.com/learn/application-security/2fa-two-factor-authentication/
-<br /><br />
+<br />
 
-## ***`Question :- What is Data Governance? A Data Governance Definition?`***
+<h2><b><i>Question :- What is Data Governance? A Data Governance Definition?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Data governance is the practice of identifying important data across an organization, ensuring it is of high quality, and improving its value to the business.
 ```
 > Read the link --> https://www.imperva.com/learn/data-security/data-governance/
-<br /><br />
+<br />
 
-## ***`Question :- What is Data Masking?`***
+<h2><b><i>Question :- What is Data Masking?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Data masking is a way to create a fake, but a realistic version of your organizational data. The goal is to protect sensitive data, while providing a functional alternative when real data is not needed—for example, in user training, sales demos, or software testing.
 
 Data masking processes change the values of the data while using the same format. The goal is to create a version that cannot be deciphered or reverse engineered. There are several ways to alter the data, including character shuffling, word or character substitution, and encryption.
 ```
 > Read the link --> https://www.imperva.com/learn/data-security/data-masking/
-<br /><br />
+<br />
 
-## ***`Question :- What is business continuity?`***
+<h2><b><i>Question :- What is business continuity?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 In an IT context, business continuity is the capability of your enterprise to stay online and deliver products and services during disruptive events, such as natural disasters, cyberattacks and communication failures.
 
 The core of this concept is the business continuity plan — a defined strategy that includes every facet of your organization and details procedures for maintaining business availability.
 ```
 > Read the link --> https://www.imperva.com/learn/availability/business-continuity-planning/
-<br /><br />
+<br />
 
+<h2><b><i>Question :- What is Network Latency?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
 
-## ***`Question :- What is Network Latency?`***
 ```
 Measured in milliseconds, network latency is the time it takes a site visitor to connect to your webserver, their request to be processed and the server to begin sending data. Several factors impact latency, including:
 ```
@@ -1473,9 +1482,11 @@ Measured in milliseconds, network latency is the time it takes a site visitor to
 ```
 A slight change in latency can have a perceivable effect on page load time and user experience (UX). This is especially true for commercial websites (i.e., e-commerce sites), where high latency can significantly impact overall performance and therefore UX.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What is SSL/TLS?`***
+<h2><b><i>Question :- What is SSL/TLS?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 Secure Sockets Layer (SSL) and its successor, Transport Layer Security (TLS) are protocols that provide private, encrypted communication across networks.
 ```
@@ -1487,9 +1498,11 @@ Secure Sockets Layer (SSL) and its successor, Transport Layer Security (TLS) are
 
     Integrity – An authentication algorithm determines whether a message has been altered.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What is DevSecOps??`***
+<h2><b><i>Question :- What is DevSecOps?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
+
 ```
 DevSecOps is a joint effort by development, security and operations personnel to ensure that products are released efficiently and securely from the start. The model was developed to address security vulnerabilities that arise when security is introduced too late in the development process. This requires rewriting the unsecure code, delays release to production, and risks deployment of software with severe security issues.
 ```
@@ -1499,7 +1512,7 @@ DevSecOps mandates shifting left security in the development lifecycle. Instead 
 ```
 The process of transitioning to a DevSecOps team is not easy, but using the right tools can simplify adoption of the process and collaboration among dev, ops, and security teams.
 ```
-<br /><br />
+<br />
 
-## ***`Question :- What is a Singleton Design Pattern?`***
-<br /><br />
+<h2><b><i>Question :- What is a Singleton Design Pattern?</i></b></h2>
+<h3><b><i>Answer - </i></b></h3>
