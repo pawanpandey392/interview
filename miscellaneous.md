@@ -438,47 +438,30 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 <h2><b><i>Question :- REST API Security Essentials?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-```
-REST API Security isn’t an afterthought. It has to be an integral part of any development project and also for REST APIs.
+<p>REST API Security isn’t an afterthought. It has to be an integral part of any development project and also for REST APIs.</p>
 
-There are multiple ways to secure a RESTful API e.g. basic auth, OAuth, etc. but one thing is sure that RESTful APIs should be stateless – so request authentication/authorization should not depend on sessions.
+<p>There are multiple ways to secure a RESTful API e.g. basic auth, OAuth, etc. but one thing is sure that RESTful APIs should be stateless – so request authentication/authorization should not depend on sessions.</p>
 
-Instead, each API request should come with some sort of authentication credentials that must be validated on the server for every request.
-```
+<p>Instead, each API request should come with some sort of authentication credentials that must be validated on the server for every request.</p>
 
 ### _`1. REST Security Design Principles`_
-> 1. Least Privilege: 
-```
-An entity should only have the required set of permissions to perform the actions for which they are authorized, and no more. Permissions can be added as needed and should be revoked when no longer in use.
-```
-> 2. Fail-Safe Defaults: 
-```
-A user’s default access level to any resource in the system should be “denied” unless they’ve been granted a “permit” explicitly.
-```
-> 3. The economy of Mechanism: 
-```
-The design should be as simple as possible. All the component interfaces and the interactions between them should be simple enough to understand.
-```
-> 4. Complete Mediation: 
-```
-A system should validate access rights to all its resources to ensure that they’re allowed and should not rely on the cached permission matrix. If the access level to a given resource is being revoked, but that isn’t reflected in the permission matrix, it would violate the security.
-```
-> 5. Open Design: 
-```
-This principle highlights the importance of building a system in an open manner—with no secret, confidential algorithms.
-```
-> 6. Separation of Privilege: 
-```
-Granting permissions to an entity should not be purely based on a single condition, a combination of conditions based on the type of resource is a better idea.
-```
-> 7. Least Common Mechanism: 
-```
-It concerns the risk of sharing state among different components. If one can corrupt the shared state, it can then corrupt all the other components that depend on it.
-```
-> 8. Psychological Acceptability: 
-```
-It states that security mechanisms should not make the resource more difficult to access than if the security mechanisms were not present. In short, security should not make worse the user experience.
-```
+
++ <strong>Least Privilege - </strong>
+    <p>An entity should only have the required set of permissions to perform the actions for which they are authorized, and no more. Permissions can be added as needed and should be revoked when no longer in use.</p>
++ <strong>Fail-Safe Defaults - </strong>
+    <p>A user’s default access level to any resource in the system should be “denied” unless they’ve been granted a “permit” explicitly.</p>
++ <strong>The economy of Mechanism - </strong>
+    <p>The design should be as simple as possible. All the component interfaces and the interactions between them should be simple enough to understand.</p>
++ <strong>Complete Mediation - </strong>
+    <p>A system should validate access rights to all its resources to ensure that they’re allowed and should not rely on the cached permission matrix. If the access level to a given resource is being revoked, but that isn’t reflected in the permission matrix, it would violate the security.</p>
++ <strong>Open Design - </strong>
+    <p>This principle highlights the importance of building a system in an open manner—with no secret, confidential algorithms.</p>
++ <strong>Separation of Privilege - </strong>
+    <p>Granting permissions to an entity should not be purely based on a single condition, a combination of conditions based on the type of resource is a better idea.</p>
++ <strong>Least Common Mechanism - </strong>
+    <p>It concerns the risk of sharing state among different components. If one can corrupt the shared state, it can then corrupt all the other components that depend on it.</p>
++ <strong>Psychological Acceptability - </strong>
+    <p>It states that security mechanisms should not make the resource more difficult to access than if the security mechanisms were not present. In short, security should not make worse the user experience.</p>
 
 ### _`2. Best Practices to Secure REST APIs`_
 
