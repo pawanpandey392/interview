@@ -2,30 +2,30 @@
 <br />
 
 ## ***`Question :- What is Cache Busting?`***
-
-```
-> Cache busting is the process of uploading a new file to replace an existing file that is already cached. This is useful because the cache will often take a long time to expire from all of its various locations and cache busting properly ensures that any changes to a file be visible to end users sooner, rather than later.
-```
+<p>
+<strong>Answer - </strong> Cache busting is the process of uploading a new file to replace an existing file that is already cached. This is useful because the cache will often take a long time to expire from all of its various locations and cache busting properly ensures that any changes to a file be visible to end users sooner, rather than later.
+</p>
 
 ### _`1. Filename Versioning :- `_ 
-
-```
 > It is the method of including the version in the file name, before the type.
+<p>
 
     {
         background-image:url(‘back.png’);
     }
+
     {
         background-image:url(‘back-2.png’);
     }
+
     {
         background-image:url(‘back-3.png’);
     }
-```
+</p>
 
 ### _`2. File Path Versioning :- `_ 
-```
 > It is the process of including the version in the directory or path for the file.
+<p>
 
     a. styles/v1/style.css 
         {
@@ -39,7 +39,7 @@
         {
             background-image:url(‘back-newest.png’);
         }
-```
+</p>
 
 ### _`3. Versioning with Query Strings :- `_ 
 ```
@@ -1547,6 +1547,3 @@ The process of transitioning to a DevSecOps team is not easy, but using the righ
 
 ## ***`Question :- What is a Singleton Design Pattern?`***
 <br /><br />
-
-
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
