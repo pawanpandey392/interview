@@ -256,14 +256,14 @@ Content-Encoding:     gzip
 <h2><b><i>Question :- Difference between HTTP/2 vs. HTTP/1.1?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _1a. What is HTTP? Why is HTTP/2 faster than HTTP/1.1?`_
+### _1a. What is HTTP? Why is HTTP/2 faster than HTTP/1.1?_
 <p>HTTP stands for hypertext transfer protocol, and it is the basis for almost all web applications. More specifically, HTTP is the method computers and servers use to request and send information. For instance, when someone navigates to cloudflare.com on their laptop, their web browser sends an HTTP request to the Cloudflare servers for the content that appears on the page. Then, Cloudflare servers send HTTP responses with the text, images, and formatting that the browser displays to the user.</p>
 
 <p>The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created.</p>
 
 <p>HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. One of the ways in which HTTP/2 is faster is in how it prioritizes content during the loading process.</p>
 
-### _1a. What is prioritization?`_
+### _1a. What is prioritization?_
 <p>
 In the context of web performance, prioritization refers to the order in which pieces of content are loaded. Suppose a user visits a news website and navigates to an article. Should the photo at the top of the article load first? Should the text of the article load first? Should the banner ads load first?</p>
 
@@ -271,7 +271,7 @@ In the context of web performance, prioritization refers to the order in which p
 
 <p>In addition, the order in which these page resources load affects how the user perceives page load time. If only behind-the-scenes content (like a CSS file) or content the user can't see immediately (like banner ads at the bottom of the page) loads first, the user will think the page is not loading at all. If the content that's most important to the user loads first, such as the image at the top of the page, then the user will perceive the page as loading faster.</p>
 
-### _1a. How does prioritization in HTTP/2 affect performance?`_
+### _1a. How does prioritization in HTTP/2 affect performance?_
 <p>In HTTP/2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not possible in HTTP/1.1.</p>
 
 <p>HTTP/2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time. In HTTP/2, when a client makes a request for a webpage, the server sends several streams of data to the client at once, instead of sending one thing after another. This method of data delivery is known as multiplexing. Developers can assign each of these data streams a different weighted value, and the value tells the client which data stream to render first.</p>
@@ -282,7 +282,7 @@ In the context of web performance, prioritization refers to the order in which p
 
 <p>In HTTP/2, data is sent all at once, much like Bob when he sends Alice multiple chapters at once. And just like Bob, developers get to number the chapters in HTTP/2. They can decide if the text of a webpage loads first, or the CSS files, or the JavaScript, or whatever they feel is most important for the user experience.</p>
 
-### _1a. What are the other differences between HTTP/2 and HTTP/1.1 that impact performance?`_
+### _1a. What are the other differences between HTTP/2 and HTTP/1.1 that impact performance?_
 + Multiplexing
     <p>HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.</p>
 
@@ -292,7 +292,7 @@ In the context of web performance, prioritization refers to the order in which p
 + Header compression
     <p>Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.</p>
 
-### _1a. What is HTTP/3?`_
+### _1a. What is HTTP/3?_
 <p>HTTP/3 is the next proposed version of the HTTP protocol. HTTP/3 does not have wide adoption on the web yet, but it is growing in usage. The key difference between HTTP/3 and previous versions of the protocol is that HTTP/3 runs over QUIC instead of TCP. QUIC is a faster and more secure transport layer protocol that is designed for the needs of the modern Internet.</p>
 <br />
 
@@ -363,7 +363,7 @@ div {
 
 <p>Popular examples of server-side rendering JavaScript frameworks include: Angular server side rendering, ejs server side rendering, server side rendering Express, Gatsby server side rendering, Google server side rendering, NestJS server side rendering, Next server side rendering, Nuxt server side rendering, React server side rendering, and Vue server side rendering.</p>
 
-### _Question. What are the Benefits of Server-Side Rendering?`_
+### _Question. What are the Benefits of Server-Side Rendering?_
 <p>Some server-side rendering advantages include:</p>
 
 + A server-side rendered application enables pages to load faster, improving the user experience.
@@ -374,7 +374,7 @@ div {
 
 + Rendering server-side helps efficiently load webpages for users with slow internet connection or outdated devices.
 
-### _Question. What are the Risks of Server-Side Rendering?`_
+### _Question. What are the Risks of Server-Side Rendering?_
 
 <p>Server-side rendering disadvantages may include:</p>
 
@@ -386,7 +386,7 @@ div {
 
 + Rendering server-side may be ideal for static site generation, but frequent server requests and full page reloads can result in overall slower page rendering in more complex applications.</p>
 
-### _Question. Server-Side Rendering vs Client-Side Rendering?`_
+### _Question. Server-Side Rendering vs Client-Side Rendering?_
 <p>
 In client-server rendering, rather than receiving all of the content from the HTML document, content is rendered in the browser using the client-side JavaScript library. The browser does not make a new request to the server when a new page is loaded. Search engine rankings may be negatively impacted as the content is not rendered until the page is loaded on the browser, however, website rendering tends to be faster in client-side rendered app. In considering server side vs client side rendering, the developer will assess factors such as the scale of the project, the complexity of the application, the number of users, and user experience priorities.</p>
 <br />
@@ -394,7 +394,7 @@ In client-server rendering, rather than receiving all of the content from the HT
 <h2><b><i>Question :- What is Statelessness in REST APIs?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _1. Statelessness`_
+### _1. Statelessness_
 <p>As per the REST (REpresentational “State” Transfer) architecture, the server does not store any state about the client session on the server-side. This restriction is called Statelessness.</p>
 
 <p>Each request from the client to the server must contain all of the necessary information to understand the request. The server cannot take advantage of any stored context on the server.</p>
@@ -414,7 +414,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 
 <p>Thus each request MUST be stand alone and should not be affected by the previous conversation that happened with the same client in past.</p>
 
-### _2. Application State vs Resource State`_
+### _2. Application State vs Resource State_
 <p>It is important to understand the between the application state and the resource state. Both are completely different things.</p>
 
 <p>Application state is server-side data that servers store to identify incoming client requests, their previous interaction details, and current context information.</p>
@@ -423,7 +423,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 
 > REST statelessness means being free from the application state.
 
-### _3. Advantages of Stateless APIs`_
+### _3. Advantages of Stateless APIs_
 <p>There are some very noticeable advantages of having REST APIs stateless.</p>
 
 + Statelessness helps in scaling the APIs to millions of concurrent users by deploying it to multiple servers. Any server can handle any request because there is no session related dependency.
@@ -444,7 +444,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 
 <p>Instead, each API request should come with some sort of authentication credentials that must be validated on the server for every request.</p>
 
-### _1. REST Security Design Principles`_
+### _1. REST Security Design Principles_
 
 + <strong>Least Privilege - </strong>
     <p>An entity should only have the required set of permissions to perform the actions for which they are authorized, and no more. Permissions can be added as needed and should be revoked when no longer in use.</p>
@@ -463,7 +463,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 + <strong>Psychological Acceptability - </strong>
     <p>It states that security mechanisms should not make the resource more difficult to access than if the security mechanisms were not present. In short, security should not make worse the user experience.</p>
 
-### _2. Best Practices to Secure REST APIs`_
+### _2. Best Practices to Secure REST APIs_
 
 + <strong>Keep it Simple - </strong>
 <p>Secure an API/System – just how secure it needs to be. Every time you make the solution more complex “unnecessarily,” you are also likely to leave a hole.</p>
@@ -505,7 +505,7 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 <h2><b><i>Question :- What is Lazy & Eager Loading?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _1. What is Lazy Loading?`_
+### _1. What is Lazy Loading?_
 <p>Lazy loading is the practice of delaying load or initialization of resources or objects until they’re actually needed to improve performance and save system resources. For example, if a web page has an image that the user has to scroll down to see, you can display a placeholder and lazy load the full image only when the user arrives to its location.</p>
 
 > The benefits of lazy loading include:
@@ -518,12 +518,12 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 #### _c. System resource conservation –_
 <p>Lazy loading conserves both server and client resources, because only some of the images, JavaScript and other code actually needs to be rendered or executed.</p>
 
-### _2. Lazy Loading vs. Eager Loading`_
+### _2. Lazy Loading vs. Eager Loading_
 <p>While lazy loading delays the initialization of a resource, eager loading initializes or loads a resource as soon as the code is executed. Eager loading also involves pre-loading related entities referenced by a resource. For example, a PHP script with an include statement performs eager loading—as soon as it executes, eager loading pulls in and loads the included resources.</p>
 
 <p>Eager loading is beneficial when there is an opportunity or need to load resources in the background. For example, some websites display a “loading” screen and eagerly load all the resources required for the web application to run.</p>
 
-### _3. Lazy Loading Implementing Methods`_
+### _3. Lazy Loading Implementing Methods_
 <p>There are several open source libraries that can be used to implement lazy loading, including:</p>
 
 + #### _blazy.js –_
@@ -645,7 +645,6 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 <p>The ALLOW-FROM option is not supported by all browsers.</p>
 
 <p>X-Frame-Options is a deprecated option in most browsers.</p>
-```
 
 + #### _d. Clickjacking test – Is your site vulnerable? -_
 <p>A basic way to test if your site is vulnerable to clickjacking is to create an HTML page and attempt to include a sensitive page from your website in an iframe. It is important to execute the test code on another web server, because this is the typical behavior in a clickjacking attack.</p>
