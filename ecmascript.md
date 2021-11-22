@@ -4,7 +4,7 @@
 
 > Trailing commas are allowed in javascript after ecmascript 5.
 
-```
+``` js
   const person = {
     firstName: "John",
     lastName: " Doe",
@@ -16,7 +16,7 @@
 
 ## 2. _Property Access on Strings_
 
-```
+``` js
   let str = "HELLO WORLD";
   str.charAt(0);
   str[0];
@@ -26,7 +26,7 @@
 
 ## 3. _`String.trim()`_
 
-```
+``` js
   console.log(`String.trim() :- `);
   var str = "       Hello World!        ";
   // console.log(String.trim(str));
@@ -37,7 +37,7 @@
 
 ## 4. _`Array.isArray()`_
 
-```
+``` js
   console.log(`Array.isArray() :- `);
   console.log(Array.isArray(null));
   console.log(Array.isArray({}));
@@ -51,7 +51,7 @@
 
 > The `forEach()` method executes a provided function once for each array element.
 
-```
+``` js
   let a = arr.forEach(x => console.log(x * 5));
   console.log(a);
 ```
@@ -62,7 +62,7 @@
 
 > The `map()` method creates a new array populated with the results of calling a provided function on every element in the calling array.
 
-```
+``` js
   let b = arr.map(a => a);
 
   console.log('Given Array :- ', arr);
@@ -76,7 +76,7 @@
 
 > The `filter()` method creates a new array with all elements that pass the test implemented by the provided function.
 
-```
+``` js
   const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
   const result = words.filter(word => word.length > 6);
@@ -89,7 +89,7 @@
 
 > The `reduce()` method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
 
-```
+``` js
   const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
   console.log(arr.reduce(reducer));
@@ -102,7 +102,7 @@
 
 > The `reduceRight()` method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.
 
-```
+``` js
   let reducer1 = (accumulator, currentValue) => accumulator.concat(currentValue);
 
   const array1 = [[0, 1], [2, 3], [4, 5]].reduceRight(reducer1);
@@ -115,7 +115,7 @@
 
 > The `every()` method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
 
-```
+``` js
   const isBelowThreshold = (currentValue) => currentValue < 40;
 
   const array = [1, 30, 39, 29, 10, 13];
@@ -128,7 +128,7 @@
 
 > The `some()` method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
 
-```
+``` js
   const even = (element) => element % 2 === 0;
   const lessThanTwenty = (element) => element < 20;
   const moreThanfifty = (element) => element > 50;
@@ -144,7 +144,7 @@
 
 > The `indexOf()` method returns the first index at which a given element can be found in the array, or -1 if it is not present.
 
-```
+``` js
   const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 
   console.log(beasts.indexOf('bison'));
@@ -158,7 +158,7 @@
 
 > The `lastIndexOf()` method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex.
 
-```
+``` js
   const animals = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
 
   console.log(animals.lastIndexOf('Dodo'));
@@ -171,7 +171,7 @@
 
 > The `JSON.parse()` method parses a JSON string, constructing the JavaScript value or object described by the string. An optional reviver function can be provided to perform a transformation on the resulting object before it is returned.
 
-```
+``` js
   const json = '{"result":true, "count":42}';
   const obj = JSON.parse(json);
 
@@ -187,7 +187,7 @@
 
 > The `JSON.stringify()` method converts a JavaScript object or value to a JSON string, optionally replacing values if a replacer function is specified or optionally including only the specified properties if a replacer array is specified.
 
-```
+``` js
   console.log(JSON.stringify({ x: 5, y: 6 }));
   console.log(JSON.stringify([new Number(3), new String('false'), new Boolean(false)]));
   console.log(JSON.stringify({ x: [10, undefined, function(){}, Symbol('')] }));
@@ -200,7 +200,7 @@
 
 > The static `Date.now()` method returns the number of milliseconds elapsed since January 1, 1970 00:00:00 UTC.
 
-```
+``` js
 const start = Date.now();
 console.log('It will take 2 seconds to run. Starting timer...');
 
@@ -214,7 +214,7 @@ setTimeout(() => {
 
 ## 17. _Property Getters and Setters_
 
-```
+``` js
   let user = {
     name: "John",
     surname: "Smith",
@@ -239,7 +239,7 @@ setTimeout(() => {
 
 > `Object.defineProperty()` is a new Object method in ES5.
 
-```
+``` js
   let person = {
     firstName: "John",
     lastName : "Doe",
@@ -249,7 +249,7 @@ setTimeout(() => {
 
 > Change a Property:
 
-```
+``` js
   Object.defineProperty(person, "language", {
     value: "EN",
     writable : true,
@@ -264,43 +264,43 @@ setTimeout(() => {
 
 > Adding or changing an object property
 
-```
+``` js
   Object.defineProperty(object, property, descriptor)
 ```
 
 > Adding or changing many object properties
 
-```
+``` js
   Object.defineProperties(object, descriptors)
 ```
 
 > Accessing Properties
 
-```
+``` js
   Object.getOwnPropertyDescriptor(object, property)
 ```
 
 > Returns all properties as an array
 
-```
+``` js
   Object.getOwnPropertyNames(object)
 ```
 
 > Returns enumerable properties as an array
 
-```
+``` js
   Object.keys(object)
 ```
 
 > Accessing the prototype
 
-```
+``` js
   Object.getPrototypeOf(object)
 ```
 
 > Prevents adding properties to an object
 
-```
+``` js
   Object.preventExtensions(object)
 
   <!-- Returns true if properties can be added to an object -->
@@ -310,7 +310,7 @@ setTimeout(() => {
 
 > Prevents changes of object properties (not values)
 
-```
+``` js
   Object.seal(object)
 
   <!-- Returns true if object is sealed -->
@@ -320,7 +320,7 @@ setTimeout(() => {
 
 > Prevents any changes to an object
 
-```
+``` js
   Object.freeze(object)
 
   <!-- Returns true if object is frozen -->
@@ -336,7 +336,7 @@ setTimeout(() => {
 
 > Default values for parameter are accepted in javascript version above ecmascript 6.
 
-```
+``` js
   function calculateAge (defaultAge = 10) {
     console.log(`Your default age is ${defaultAge}`);
   }
@@ -348,7 +348,7 @@ setTimeout(() => {
 
 ## 2. _Template Literals_
 
-```
+``` js
   console.log('\n2. Template Literals :- ');
   let firstName = 'Caroline', lastName = 'Forbes';
 
@@ -360,7 +360,7 @@ setTimeout(() => {
 
 ## 3. _Multi-line Strings_
 
-```
+``` js
   let poem = `Johny Johny Yes Papa,
               Eating sugar?  No, papa!
               Telling lies? No, papa!
@@ -372,7 +372,7 @@ setTimeout(() => {
 
 ## 4. _Destructuring Assignment_
 
-```
+``` js
   let {age, a: status = false} = {age: 42, isAlive: true, livesIn: 'Nova Scotia'};
   let {livesIn, isAlive, ...newBe} = {age: 42, isAlive: true, livesIn: 'Nova Scotia', a: true};
   console.log(status);
@@ -388,7 +388,7 @@ setTimeout(() => {
 
 > Default values for parameter are accepted in javascript version above ecmascript 6.
 
-```
+``` js
   function getLaptop(make, model, year) {
     return {make, model, year}
   }
@@ -399,7 +399,7 @@ setTimeout(() => {
 
 ## 6. _Arrow Functions_
 
-```
+``` js
   let arrowFunction = (params) => {
     console.log('Hey there, I am an Arrow function.');
     console.log(`I can even take params like ${params}`);
@@ -411,7 +411,7 @@ setTimeout(() => {
 
 ## 7. _Block-Scoped Constructs Let and Const_
 
-```
+``` js
 function calculateAmount (boolVal) {
   let amount = 0;
   if (boolVal) {
@@ -426,7 +426,7 @@ console.log(calculateAmount(true));
 
 ## 8. _Classes_
 
-```
+``` js
   class Profile {
     constructor(firstName, lastName = '') {
       this.firstName = firstName;
@@ -445,7 +445,7 @@ console.log(calculateAmount(true));
 
 ## 9. _Modules_
 
-```
+``` js
   export var userID = 10;
   export function getName(name) {};
 
@@ -457,7 +457,7 @@ console.log(calculateAmount(true));
 
 ## 10. _Promises_
 
-```
+``` js
   let promise = new Promise((resolve, reject) => {
     console.log('I am inside a Promise.');
     resolve();
@@ -477,7 +477,7 @@ console.log(calculateAmount(true));
 
 ## 1. _`Array.prototype.includes`_
 
-```
+``` js
   let arr = ['a', 'b', 'c'];
   console.log(arr.includes('b'));
   console.log(arr.includes('d'));
@@ -492,7 +492,7 @@ console.log(calculateAmount(true));
 
 ## 2. _Exponentiation Operator (\*\*)_
 
-```
+``` js
 console.log(2 ** 3)
 console.log(2 ** 4)
 ```
@@ -503,7 +503,7 @@ console.log(2 ** 4)
 
 ## 1. _`Object.values()` & `Object.entries()`_
 
-```
+``` js
   let arr = {
     'key': 'value',
     'key1': 'value',
@@ -521,7 +521,7 @@ console.log(2 ** 4)
 
 > padStart()
 
-```
+``` js
   console.log(JSON.stringify('Javascript'.padStart(10)));
   console.log(JSON.stringify('Javascript'.padStart(12)));
   console.log(JSON.stringify('Javascript'.padStart(15, 'x')));
@@ -531,7 +531,7 @@ console.log(2 ** 4)
 
 > padEnd()
 
-```
+``` js
   console.log(JSON.stringify('Javascript'.padEnd(10)));
   console.log(JSON.stringify('Javascript'.padEnd(12)));
   console.log(JSON.stringify('Javascript'.padEnd(15, 'x')));
@@ -543,7 +543,7 @@ console.log(2 ** 4)
 
 ## 3. _`Object.getOwnPropertyDescriptors`_
 
-```
+``` js
   Object.freeze(arr);
   console.log(Object.getOwnPropertyDescriptors(arr));
 ```
@@ -552,7 +552,7 @@ console.log(2 ** 4)
 
 ## 4. _Trailing commas in function parameter lists_
 
-```
+``` js
   function trail (a, b, c,) {
     let obj = {key: 'value',};
     console.log('This is an example for trailing comma.');
@@ -565,7 +565,7 @@ console.log(2 ** 4)
 
 ## 5. _Async Functions_
 
-```
+``` js
 function delayMe () {
   return new Promise ((resolve, reject) => {
     setTimeout(() => {
@@ -588,7 +588,7 @@ getContentFromMyWebsite();
 
 > Rest Properties
 
-```
+``` js
   const { first, second, ...others } = { first: 1, second: 2, third: 3, fourth: 4, fifth: 5 };
   console.log(first);
   console.log(second);
@@ -597,7 +597,7 @@ getContentFromMyWebsite();
 
 > Spread Properties
 
-```
+``` js
   const items = { first, second, ...others }
   console.log(items);
 ```
@@ -606,7 +606,7 @@ getContentFromMyWebsite();
 
 ## 2. _Asynchronous iteration_
 
-```
+``` js
   for await (const line of readLines(filePath)) {
     console.log(line)
   }
@@ -616,7 +616,7 @@ getContentFromMyWebsite();
 
 ## 3. _`Promise.prototype.finally()`_
 
-```
+``` js
   fetch('file.json')
     .then(data => data.json())
     .catch(error => console.error(error))
@@ -629,7 +629,7 @@ getContentFromMyWebsite();
 
 ## 1. _`Array.flat()`_
 
-```
+``` js
   let arr = [1, 2, 3, 4, 5, [6, 7, 8, 9, [10]]];
   console.log(arr.flat().flat());
 ```
@@ -638,7 +638,7 @@ getContentFromMyWebsite();
 
 ## 2. _`Array.flatMap()`_
 
-```
+``` js
   let arr1 = [1, 2, 3, 4, 5];
   console.log(arr1.map(x => [x, x * 2]))
   console.log(arr1.flatMap(x => [x, x * 2]))
@@ -650,7 +650,7 @@ getContentFromMyWebsite();
 
 > Example One
 
-```
+``` js
   let arr2 = {
     name: 'Stefan Salvatore',
     age: '165 Years Old',
@@ -664,7 +664,7 @@ getContentFromMyWebsite();
 
 > Example Two
 
-```
+``` js
   let entries1 = new Map([
     [ 'name', 'Stefan Salvatore' ],
     [ 'age', '165 Years Old' ],
@@ -678,7 +678,7 @@ getContentFromMyWebsite();
 
 ## 4. _`String.trimStart()` & `String.trimEnd()`_
 
-```
+``` js
   let string = '      Hello World.      ';
   console.log(JSON.stringify(string.trimStart()));
   console.log(JSON.stringify(string.trimEnd()));
@@ -689,7 +689,7 @@ getContentFromMyWebsite();
 
 ## 5. _Optional Catch Binding_
 
-```
+``` js
   try {
     throw new Error('This is Optional Catch Binding.');
   } catch {
@@ -701,7 +701,7 @@ getContentFromMyWebsite();
 
 ## 6. _`Function.toString()`_
 
-```
+``` js
   function sayHelloWorld () {
     let params = {name: 'Damon Salvatore'}
     console.log(`Hello ${params.name}`);
@@ -713,7 +713,7 @@ getContentFromMyWebsite();
 
 ## 7. _`Symbol.description`_
 
-```
+``` js
   let mySymbol = 'Hello Damon';
   let symObj = Symbol(mySymbol);
   console.log(symObj);
@@ -725,7 +725,7 @@ getContentFromMyWebsite();
 
 ## 8. _Well Formed `JSON.Stringify()`_
 
-```
+``` js
   JSON.stringify('𝌆');
   JSON.stringify('\uD834\uDF06');
 ```
@@ -734,7 +734,7 @@ getContentFromMyWebsite();
 
 ## 9. _`Array.Sort` Stability_
 
-```
+``` js
   let rating = [
     {name: 'Mike', age: 14},
     {name: 'Chad', age: 13},
@@ -755,7 +755,7 @@ getContentFromMyWebsite();
 
 ## 10. _JSON ⊂ ECMAScript (JSON Superset)_
 
-```
+``` js
   const LS = "";
   const PS = eval("'\u2029'");
   console.log(LS);
@@ -770,7 +770,7 @@ getContentFromMyWebsite();
 
 > 2^53 – 1 is the maximum number you can represent in JavaScript. But with JavaScript ES11 update, BigInt will support the creation of numbers that are bigger than that. You can view the maximum number that can be represented in JavaScript for yourself by executing the below code.
 
-```
+``` js
   console.log(Number.MAX_SAFE_INTEGER); // output is: 9007199254740991
 
   // Case (i): When you add 1 to this number:
@@ -786,7 +786,7 @@ getContentFromMyWebsite();
 
 > Hence, when you implement BigInt by adding the alphabet ‘n’ at the end of your number, you will get the correct output/result.
 
-```
+``` js
   const maxNum = 9007199254740991n;
 
   // Case (i): When you add 1 to this number:
@@ -811,14 +811,14 @@ getContentFromMyWebsite();
 
 > While using webpack for module bundling, you may have used dynamic imports. With JavaScript ES11, you get native support for this feature.
 
-```
+``` js
   import('/dynamic-import-example.js')
     .then(Alert => {
         Alert.show();
     })
 ```
 
-```
+``` js
   export default {
     show() {
       console.log('Here are some good news from dynamic import.');
@@ -833,7 +833,7 @@ getContentFromMyWebsite();
 
 > You can execute JavaScript codes in different environments, such as browsers or Node.js. In browsers, a global object is available under the window variable; whereas, in Node.js, it is an object called global. With globalThis, it is now easy to use a global object regardless of the environment in which the code is running.
 
-```
+``` js
   // In a browser
   window == globalThis // true
 
@@ -847,7 +847,7 @@ getContentFromMyWebsite();
 
 > MatchAll method is useful when it comes to finding all the matches and their positions by applying the regular expression to a string. On the other hand, the match method returns only the items that were matched.
 
-```
+``` js
   const regex = /\b(iPhone)+\b/g;
   const smartphones = "S series, iPhone, note series, iPhone, A series, iPhone, moto phones";
 
@@ -858,7 +858,7 @@ getContentFromMyWebsite();
 
 > matchAll in contrast, returns additional information, such as the index of the string found.
 
-```
+``` js
   const regex = /\b(iPhone)+\b/g;
   const smartphones = "S series, iPhone, note series, iPhone, A series, iPhone, moto phones";
   for (const match of smartphones.matchAll(regex)) {
@@ -870,7 +870,7 @@ getContentFromMyWebsite();
 
 ## 5. _Nullish Coalescing_
 
-```
+``` js
   // Thruthy value without Nullish Coalescing
   let theNumber = 7
   let numb = theNumber || 5
@@ -899,7 +899,7 @@ getContentFromMyWebsite();
 
 > Accessing an Object Property
 
-```
+``` js
   const smartphones = {
       brands: {
           apple: true
@@ -918,7 +918,7 @@ getContentFromMyWebsite();
 
 > Accessing an Array
 
-```
+``` js
   let smartphone =  ['apple', 'samsung', 'motorola'];
 
   // output is: samsung
@@ -934,7 +934,7 @@ getContentFromMyWebsite();
 
 > Calling a Function
 
-```
+``` js
   let phoneApple = () => {
     return '11 Pro Max'
   }
@@ -958,7 +958,7 @@ getContentFromMyWebsite();
 
 ## 7. _Private Identifier in Classes_
 
-```
+``` js
   class Smartphones {
     #phone_color = "silver";
     designer(name) {
@@ -984,7 +984,7 @@ getContentFromMyWebsite();
 
 > When you want multiple Promises to complete, you can use Promise.all ([promise_1, promise_2]). In this process, if one of the promises fails, the JavaScript engine will throw an error. Luckily, there are cases in which the failure of one promise doesn’t matter, and the rest would resolve. To achieve that, the new JavaScript ES11 unpacks Promise.allSettled.
 
-```
+``` js
   promise_1 = Promise.resolve('hi');
 
   promise_2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'world'));
@@ -1006,7 +1006,7 @@ getContentFromMyWebsite();
 
 ## 9. _Static Identifier in Classes_
 
-```
+``` js
   class Smartphone {
     add_color() {
       console.log("Adding Colors");
@@ -1024,7 +1024,7 @@ getContentFromMyWebsite();
 
 > When you try to access a method without instantiating the ‘Smartphone’ class, it will result in an error. With the help of static fields, you can now declare a class method using static keyword and call it from outside of a class.
 
-```
+``` js
   class Smartphone {
     designer(color) {
       this.color = color;
@@ -1045,7 +1045,7 @@ getContentFromMyWebsite();
 
 > To wait for a Promise to complete, a function with await operator should be defined within async function.
 
-```
+``` js
   const Smartphone = async () => {
       const color = await fetch(silver)
   };
@@ -1053,7 +1053,7 @@ getContentFromMyWebsite();
 
 > On the downside, if there is a need to wait for something in the global scope, it would not be possible, and generally needs an Immediately Invoked Function Expression.
 
-```
+``` js
   (async () => {
       const color = await fetch(silver)
   })();
@@ -1061,13 +1061,13 @@ getContentFromMyWebsite();
 
 > With the help of Top Level Await, you don’t have to wrap code in an async function. Instead, the below code will work:
 
-```
+``` js
   const color = await fetch(silver);
 ```
 
 > It is very useful when it comes to using a fallback source when the initial one fails or resolving module dependencies.
 
-```
+``` js
   let Vue
   try {
       Vue = await import('silver_1_to_vue')

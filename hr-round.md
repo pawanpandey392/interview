@@ -24,10 +24,10 @@ I have done masters in computer science from Uttarakhand Technical University De
 <h2><b><i>Question :- What are your greatest strengths and weaknesses?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-> <strong>Strength</strong>
+> <strong>Strength - </strong>
 <p>Well, being a great team player and honest toward my profession are my key strengths. I am also a self-motivated and quick learning individual.</p>
 
-> <strong>Weakness</strong>
+> <strong>Weakness - </strong>
 <p>I am like entirely focused/concentrated on one thing at a time.</p>
 
 <p>I get nervous while talking to new people. I have been working on it for quite a long time now and I can say with utmost confidence that I have come a long way.</p>
