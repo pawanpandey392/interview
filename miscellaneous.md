@@ -107,7 +107,7 @@ APIs only need to be up-versioned when a breaking change is made.
 + URI Versioning
 <p>Using the URI is the most straightforward approach (and most commonly used as well) though it does violate the principle that a URI should refer to a unique resource. You are also guaranteed to break client integration when a version is updated.</p>
 
-``` js
+``` http
 http://api.example.com/v1
 http://apiv1.example.com
 ```
@@ -118,7 +118,7 @@ http://apiv1.example.com
 + Versioning using Custom Request Header
 <p>A custom header (e.g. Accept-version) allows you to preserve your URIs between versions though it is effectively a duplicate of the content negotiation behavior implemented by the existing Accept header.</p>
 
-``` js
+``` http
 Accept-version: v1
 Accept-version: v2
 ```
@@ -129,7 +129,7 @@ Accept-version: v2
 
 <p>The result tends to be a more complex API as clients have to know which headers to specify before requesting a resource.</p>
 
-``` js
+```  http
 Accept: application/vnd.example.v1+json
 Accept: application/vnd.example+json;version=1.0
 ```
@@ -158,12 +158,12 @@ If the selection of the best representation for a response is made by an algorit
 ### _1a. Using HTTP Headers :-_
 <p>At server side, an incoming request may have an entity attached to it. To determine it’s type, server uses the HTTP request header Content-Type. Some common examples of content types are “text/plain”, “application/xml”, “text/html”, “application/json”, “image/gif”, and “image/jpeg”.</p>
 
-```
+``` http
 Content-Type: application/json
 ```
 <p>Similarly, to determine what type of representation is desired on the client-side, an HTTP header ACCEPT is used. It will have one of the values mentioned for Content-Type above.</p>
 
-```
+``` http
 Accept: application/json
 ```
 <p>Generally, if no Accept header is present in the request, the server can send pre-configured default representation type.</p>
@@ -173,7 +173,7 @@ Accept: application/json
 ### _1b. Using URL Patterns :-_
 <p>Another way to pass content type information to the server, the client may use the specific extension in resource URIs. For example, a client can ask for details using:</p>
 
-```
+``` http
 http://rest.api.com/v1/employees/20423.xml
 http://rest.api.com/v1/employees/20423.json
 ```
@@ -186,7 +186,7 @@ http://rest.api.com/v1/employees/20423.json
 
 For example,</p>
 
-```
+``` http
 Accept: application/json,application/xml;q=0.9,*/*;q=0.8
 ```
 <p>Above Accept header allows you to ask the server a JSON format (first choice). If it can’t, perhaps it could return XML format (the second choice). If it’s still not possible, let it return what it can.</p>
