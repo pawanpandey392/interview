@@ -105,37 +105,37 @@ APIs only need to be up-versioned when a breaking change is made.
 ### _Q. How to version a REST API? :-_
 
 + URI Versioning
-    <p>Using the URI is the most straightforward approach (and most commonly used as well) though it does violate the principle that a URI should refer to a unique resource. You are also guaranteed to break client integration when a version is updated.</p>
-    
-    ```
-    http://api.example.com/v1
-    http://apiv1.example.com
-    ```
-    <p>The version need not be numeric, nor specified using the “v[x]” syntax.</p>
+<p>Using the URI is the most straightforward approach (and most commonly used as well) though it does violate the principle that a URI should refer to a unique resource. You are also guaranteed to break client integration when a version is updated.</p>
 
-    <p>Alternatives include dates, project names, seasons, or other identifiers that are meaningful enough to the team producing the APIs and flexible enough to change as the versions change.</p>
+``` js
+http://api.example.com/v1
+http://apiv1.example.com
+```
+<p>The version need not be numeric, nor specified using the “v[x]” syntax.</p>
+
+<p>Alternatives include dates, project names, seasons, or other identifiers that are meaningful enough to the team producing the APIs and flexible enough to change as the versions change.</p>
 
 + Versioning using Custom Request Header
-    <p>A custom header (e.g. Accept-version) allows you to preserve your URIs between versions though it is effectively a duplicate of the content negotiation behavior implemented by the existing Accept header.</p>
+<p>A custom header (e.g. Accept-version) allows you to preserve your URIs between versions though it is effectively a duplicate of the content negotiation behavior implemented by the existing Accept header.</p>
 
-    ```
-    Accept-version: v1
-    Accept-version: v2
-    ```
+``` js
+Accept-version: v1
+Accept-version: v2
+```
 + Versioning using “Accept” header
-    <p>Content negotiation may let you preserve a clean set of URLs, but you still have to deal with the complexity of serving different versions of content somewhere.</p>
+<p>Content negotiation may let you preserve a clean set of URLs, but you still have to deal with the complexity of serving different versions of content somewhere.</p>
 
-    <p>This burden tends to be moved up the stack to your API controllers which become responsible for figuring out which version of a resource to send.</p>
+<p>This burden tends to be moved up the stack to your API controllers which become responsible for figuring out which version of a resource to send.</p>
 
-    <p>The result tends to be a more complex API as clients have to know which headers to specify before requesting a resource.</p>
+<p>The result tends to be a more complex API as clients have to know which headers to specify before requesting a resource.</p>
 
-    ```
-    Accept: application/vnd.example.v1+json
-    Accept: application/vnd.example+json;version=1.0
-    ```
-    <p>In the real world, an API is never going to be completely stable. So it’s important how this change is managed.</p>
+``` js
+Accept: application/vnd.example.v1+json
+Accept: application/vnd.example+json;version=1.0
+```
+<p>In the real world, an API is never going to be completely stable. So it’s important how this change is managed.</p>
 
-    <p>A well-documented and gradual deprecation of API can be an acceptable practice for most APIs.</p>
+<p>A well-documented and gradual deprecation of API can be an acceptable practice for most APIs.</p>
 <br />
 
 <h2><b><i>Question :- What is Content Negotiation?</i></b></h2>
