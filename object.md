@@ -16,7 +16,7 @@
 
 <br />
 
-## 2. _`Object.defineProperties()`_
+## 2. _Object.defineProperties()_
 
 ``` js
   Object.defineProperties(personA, {
@@ -37,7 +37,7 @@
 
 <br />
 
-## 3. _`Object.defineProperty()`_
+## 3. _Object.defineProperty()_
 
 ``` js
   Object.defineProperty(personA, 'image', {
@@ -50,7 +50,7 @@
 
 <br />
 
-## 4. _`Object.getOwnPropertyDescriptor()`_
+## 4. _Object.getOwnPropertyDescriptor()_
 
 ``` js
   const descriptor1 = Object.getOwnPropertyDescriptor(personA, 'firstname');
@@ -65,7 +65,7 @@
 
 <br />
 
-## 5. _`Object.getOwnPropertyDescriptors()`_
+## 5. _Object.getOwnPropertyDescriptors()_
 
 ``` js
   const descriptors1 = Object.getOwnPropertyDescriptors(personA);
@@ -80,7 +80,7 @@
 
 <br />
 
-## 6. _`Object.getOwnPropertyNames()`_
+## 6. _Object.getOwnPropertyNames()_
 
 > The Object.getOwnPropertyNames() method returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly in a given object.
 
@@ -90,7 +90,7 @@
 
 <br />
 
-## 7. _`Object.freeze()`_
+## 7. _Object.freeze()_
 
 > There are many ways to create an Object in javascript.
 
@@ -109,7 +109,7 @@
 ```
 <br />
 
-## 8. _`Object.isExtensible()`_
+## 8. _Object.isExtensible()_
 
 ``` js
   console.log('personC isExtensible?', Object.isExtensible(personC));
@@ -130,7 +130,7 @@
 
 <br />
 
-## 9. _`Object.seal()`_
+## 9. _Object.seal()_
 
 > The Object.seal() method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.
 
@@ -160,7 +160,7 @@
 
 <br />
 
-## 10. _`Object.getPrototypeOf()`_
+## 10. _Object.getPrototypeOf()_
 
 ``` js
   console.log('getPrototypeOf', Object.getPrototypeOf(personA));
@@ -168,7 +168,7 @@
 
 <br />
 
-## 11. _`Object.is()`_
+## 11. _Object.is()_
 
 > The Object.is() method determines whether two values are the same value.
 
@@ -196,7 +196,7 @@
 
 <br />
 
-## 12. _`Object.keys()`_
+## 12. _Object.keys()_
 
 > Returns an array of a given object's own enumerable property names.
 
@@ -206,7 +206,7 @@
 
 <br />
 
-## 13. _`Object.values()`_
+## 13. _Object.values()_
 
 > The Object.values() method returns an array of a given object's own enumerable property values
 
@@ -216,7 +216,7 @@
 
 <br />
 
-## 14. _`Object.entries()`_
+## 14. _Object.entries()_
 
 > Returns an array of a given object's own enumerable string-keyed property [key, value] pairs.
 
@@ -228,7 +228,7 @@
 
 <br />
 
-## 15. _`Object.fromEntries()`_
+## 15. _Object.fromEntries()_
 
 > The Object.fromEntries() method transforms a list of key-value pairs into an object.
 
@@ -238,7 +238,7 @@
 
 <br />
 
-## 16. _`Object.assign()`_
+## 16. _Object.assign()_
 
 > The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
 
@@ -256,7 +256,7 @@
 
 <br />
 
-## 17. _`Object.prototype.propertyIsEnumerable()`_
+## 17. _Object.prototype.propertyIsEnumerable()_
 
 > The propertyIsEnumerable() method returns a Boolean indicating whether the specified property is enumerable and is the object's own property.
 
@@ -277,7 +277,7 @@
 
 <br />
 
-## 18. _`Object.setPrototypeOf()`_
+## 18. _Object.setPrototypeOf()_
 
 > The Object.setPrototypeOf() method sets the prototype (i.e., the internal [[Prototype]] property) of a specified object to another object or null.
 
