@@ -175,6 +175,7 @@ Accept: application/json
 
 ``` http
 http://rest.api.com/v1/employees/20423.xml
+
 http://rest.api.com/v1/employees/20423.json
 ```
 <p>In the above case, the first request URI will return an XML response whether the second request URI will return a JSON response.</p>
