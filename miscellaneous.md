@@ -5,7 +5,7 @@
 <h3><b><i>Answer - </i></b></h3>
 <p>Cache busting is the process of uploading a new file to replace an existing file that is already cached. This is useful because the cache will often take a long time to expire from all of its various locations and cache busting properly ensures that any changes to a file be visible to end users sooner, rather than later.</p>
 
-### _`1. Filename Versioning :- `_ 
+### _1. Filename Versioning :- _ 
 > It is the method of including the version in the file name, before the type.
 
 ``` css
@@ -21,7 +21,7 @@
         background-image:url(‘back-3.png’);
     }
 ```
-### _`2. File Path Versioning :- `_ 
+### _2. File Path Versioning :- _ 
 > It is the process of including the version in the directory or path for the file.
 ``` css
     a. styles/v1/style.css 
@@ -38,7 +38,7 @@
         }
 ```
 
-### _`3. Versioning with Query Strings :- `_ 
+### _3. Versioning with Query Strings :- _ 
 <p>A Query String is a unique set of parameters that can identify separate files within the same file hierarchical path. This is usually done by adding a '?' followed by the string that indicates the differences to the end of the file. This can be used for cache busting because most cache mechanisms will use the query string as a separate file.</p>
 
 ``` css
@@ -63,17 +63,17 @@
 Semantic versioning or SemVer is the ideal way of versioning packages. They are usually written like 1.4.5 (major.minor.patch)
 </p>
 
-### _`1a. Bug fix/patch version :- `_ 
+### _1a. Bug fix/patch version :- _ 
 <p>
 Includes bug fixes/documentation spelling mistakes etc.
 </p>
 
-### _`1b. Minor version :- `_ 
+### _1b. Minor version :- _ 
 <p>
 Includes additions of functions or API which does not break anything from the older versions So anything that runs on v1.1.0 should work on v1.9.0 as well.
 </p>
 
-### _`1c. Major version :- `_ 
+### _1c. Major version :- _ 
 <p>
 Includes version which breaks stuff. It can include removing APIs or changing names of functions so anything that works on v1.0.0 may not necessarily work on v2.0.0
 </p>
@@ -86,7 +86,7 @@ Includes version which breaks stuff. It can include removing APIs or changing na
 API versioning is the practice of transparently managing changes to your API. Versioning is effective communication around changes to your API, so consumers know what to expect from it. You are delivering data to the public in some fashion and you need to communicate when you change the way that data is delivered.
 </p>
 
-### _`Q. When to version? :- `_ 
+### _Q. When to version? :- _ 
 <p>
 APIs only need to be up-versioned when a breaking change is made.
 </p>
@@ -102,7 +102,7 @@ APIs only need to be up-versioned when a breaking change is made.
 <p>Non-breaking changes, such as adding new endpoints or new response parameters, do not require a change to the major version number.
 </p>
 
-### _`Q. How to version a REST API? :- `_
+### _Q. How to version a REST API? :- _
 
 + URI Versioning
     <p>Using the URI is the most straightforward approach (and most commonly used as well) though it does violate the principle that a URI should refer to a unique resource. You are also guaranteed to break client integration when a version is updated.</p>
@@ -145,7 +145,7 @@ Generally, the REST resources can have multiple presentations, mostly because th
 
 <p>HTTP has provisions for several mechanisms for “content negotiation” — the process of selecting the best representation for a given response when there are multiple representations available.</p>
 
-### _`1. Server-driven Vs Agent-driven Content Negotiation :- `_ 
+### _1. Server-driven Vs Agent-driven Content Negotiation :- _ 
 <p>
 If the selection of the best representation for a response is made by an algorithm located at the server, it is called server-driven negotiation. If that selection is made at the agent or client-side, it is called agent-driven negotiation.</p>
 
@@ -155,7 +155,7 @@ If the selection of the best representation for a response is made by an algorit
 
 <p>So, most REST API implementations rely on agent-driven content negotiations. Agent-driven content negotiation depends on the usage of HTTP request headers or resource URI patterns.</p>
 
-### _`1a. Using HTTP Headers :- `_ 
+### _1a. Using HTTP Headers :- _ 
 <p>At server side, an incoming request may have an entity attached to it. To determine it’s type, server uses the HTTP request header Content-Type. Some common examples of content types are “text/plain”, “application/xml”, “text/html”, “application/json”, “image/gif”, and “image/jpeg”.</p>
 
 ```
@@ -170,7 +170,7 @@ Accept: application/json
 
 > Implementing Accept header based content negotiation is most used and recommened way.
 
-### _`1b. Using URL Patterns :- `_ 
+### _1b. Using URL Patterns :- _ 
 <p>Another way to pass content type information to the server, the client may use the specific extension in resource URIs. For example, a client can ask for details using:</p>
 
 ```
@@ -179,7 +179,7 @@ http://rest.api.com/v1/employees/20423.json
 ```
 <p>In the above case, the first request URI will return an XML response whether the second request URI will return a JSON response.</p>
 
-### _`2. Defining Preferences :- `_ 
+### _2. Defining Preferences :- _ 
 <p>It is possible to have multiple values in Accept header using the ‘q’ parameter i.e. relative quality factor.</p>
 
 <p>The client may want to provide multiple values in the accept header when the client is not sure if its desired representation is present or supported by the server at that time. [RFC 2296]
@@ -208,9 +208,9 @@ Different protocols use different techniques to enable compression and notify th
 HTTP is the most widely used protocol for REST – so we are taking the example of HTTP-specific response compression.
 </p>
 
-### _`1. Compression Related Request/Response Headers :- `_ 
+### _1. Compression Related Request/Response Headers :- _ 
 
-### _`1a. Accept-Encoding :- `_ 
+### _1a. Accept-Encoding :- _ 
 <p>While requesting resource representations – along with an HTTP request, the client sends an Accept-Encoding header that says what kind of compression algorithms the client understands.
 
 The two standard values for Accept-Encoding are compress and gzip.
@@ -236,7 +236,7 @@ Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0
 
 <p>If an Accept-Encoding the field is present in a request, and if the server cannot send a response that is acceptable according to the Accept-Encoding header, then the server SHOULD send an error response with the 406 (Not Acceptable) status code.</p>
 
-### _`1b. Content-Encoding :- `_ 
+### _1b. Content-Encoding :- _ 
 <p>If the server understands one of the compression algorithms from Accept-Encoding, it can use that algorithm to compress the representation before serving it. When successfully compressed, the server lets know the client of encoding scheme by another HTTP header i.e. Content-Encoding.
 </p>
 
@@ -256,14 +256,14 @@ Content-Encoding:     gzip
 <h2><b><i>Question :- Difference between HTTP/2 vs. HTTP/1.1?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1a. What is HTTP? Why is HTTP/2 faster than HTTP/1.1?`_
+### _1a. What is HTTP? Why is HTTP/2 faster than HTTP/1.1?_
 <p>HTTP stands for hypertext transfer protocol, and it is the basis for almost all web applications. More specifically, HTTP is the method computers and servers use to request and send information. For instance, when someone navigates to cloudflare.com on their laptop, their web browser sends an HTTP request to the Cloudflare servers for the content that appears on the page. Then, Cloudflare servers send HTTP responses with the text, images, and formatting that the browser displays to the user.</p>
 
 <p>The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1. This version is still in use on the web. In 2015, a new version of HTTP called HTTP/2 was created.</p>
 
 <p>HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate. In particular, HTTP/2 is much faster and more efficient than HTTP/1.1. One of the ways in which HTTP/2 is faster is in how it prioritizes content during the loading process.</p>
 
-### _`1a. What is prioritization?`_
+### _1a. What is prioritization?_
 <p>
 In the context of web performance, prioritization refers to the order in which pieces of content are loaded. Suppose a user visits a news website and navigates to an article. Should the photo at the top of the article load first? Should the text of the article load first? Should the banner ads load first?</p>
 
@@ -271,7 +271,7 @@ In the context of web performance, prioritization refers to the order in which p
 
 <p>In addition, the order in which these page resources load affects how the user perceives page load time. If only behind-the-scenes content (like a CSS file) or content the user can't see immediately (like banner ads at the bottom of the page) loads first, the user will think the page is not loading at all. If the content that's most important to the user loads first, such as the image at the top of the page, then the user will perceive the page as loading faster.</p>
 
-### _`1a. How does prioritization in HTTP/2 affect performance?`_
+### _1a. How does prioritization in HTTP/2 affect performance?_
 <p>In HTTP/2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not possible in HTTP/1.1.</p>
 
 <p>HTTP/2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time. In HTTP/2, when a client makes a request for a webpage, the server sends several streams of data to the client at once, instead of sending one thing after another. This method of data delivery is known as multiplexing. Developers can assign each of these data streams a different weighted value, and the value tells the client which data stream to render first.</p>
@@ -282,7 +282,7 @@ In the context of web performance, prioritization refers to the order in which p
 
 <p>In HTTP/2, data is sent all at once, much like Bob when he sends Alice multiple chapters at once. And just like Bob, developers get to number the chapters in HTTP/2. They can decide if the text of a webpage loads first, or the CSS files, or the JavaScript, or whatever they feel is most important for the user experience.</p>
 
-### _`1a. What are the other differences between HTTP/2 and HTTP/1.1 that impact performance?`_
+### _1a. What are the other differences between HTTP/2 and HTTP/1.1 that impact performance?_
 + Multiplexing
     <p>HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it. In contrast, HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.</p>
 
@@ -292,7 +292,7 @@ In the context of web performance, prioritization refers to the order in which p
 + Header compression
     <p>Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller. However, HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.</p>
 
-### _`1a. What is HTTP/3?`_
+### _1a. What is HTTP/3?_
 <p>HTTP/3 is the next proposed version of the HTTP protocol. HTTP/3 does not have wide adoption on the web yet, but it is growing in usage. The key difference between HTTP/3 and previous versions of the protocol is that HTTP/3 runs over QUIC instead of TCP. QUIC is a faster and more secure transport layer protocol that is designed for the needs of the modern Internet.</p>
 <br />
 
@@ -301,7 +301,7 @@ In the context of web performance, prioritization refers to the order in which p
 <p>
 Tree shaking is a term commonly used in the JavaScript context for dead-code elimination. It relies on the static structure of ES2015 module syntax, i.e. import and export. The name and concept have been popularized by the ES2015 module bundler rollup.</p>
 
-### _`1a. Clarifying tree shaking and sideEffects :- `_
+### _1a. Clarifying tree shaking and sideEffects :- _
 <p>The sideEffects and usedExports (more known as tree shaking) optimizations are two different things.</p>
 
 <p>sideEffects is much more effective since it allows to skip whole modules/files and the complete subtree.</p>
@@ -314,12 +314,12 @@ Tree shaking is a term commonly used in the JavaScript context for dead-code eli
 
 <p>All HTML elements can be considered as boxes.</p>
 
-### _`The CSS Box Model :- `_
+### _The CSS Box Model :- _
 <p>In CSS, the term "box model" is used when talking about design and layout.</p>
 
 <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. The image below illustrates the box model:</p>
 
-### _`Explanation of the different parts :- `_
+### _Explanation of the different parts :- _
 
 + Content - The content of the box, where text and images appear
 
@@ -332,7 +332,7 @@ Tree shaking is a term commonly used in the JavaScript context for dead-code eli
 <p>The box model allows us to add a border around elements, and to define space between elements. 
 </p>
 
-### _`Demonstration of the box model :- `_
+### _Demonstration of the box model :- _
 ``` css
 div {
   width: 300px;
@@ -363,7 +363,7 @@ div {
 
 <p>Popular examples of server-side rendering JavaScript frameworks include: Angular server side rendering, ejs server side rendering, server side rendering Express, Gatsby server side rendering, Google server side rendering, NestJS server side rendering, Next server side rendering, Nuxt server side rendering, React server side rendering, and Vue server side rendering.</p>
 
-### _`Question. What are the Benefits of Server-Side Rendering?`_
+### _Question. What are the Benefits of Server-Side Rendering?_
 <p>Some server-side rendering advantages include:</p>
 
 + A server-side rendered application enables pages to load faster, improving the user experience.
@@ -374,7 +374,7 @@ div {
 
 + Rendering server-side helps efficiently load webpages for users with slow internet connection or outdated devices.
 
-### _`Question. What are the Risks of Server-Side Rendering?`_
+### _Question. What are the Risks of Server-Side Rendering?_
 
 <p>Server-side rendering disadvantages may include:</p>
 
@@ -386,7 +386,7 @@ div {
 
 + Rendering server-side may be ideal for static site generation, but frequent server requests and full page reloads can result in overall slower page rendering in more complex applications.</p>
 
-### _`Question. Server-Side Rendering vs Client-Side Rendering?`_
+### _Question. Server-Side Rendering vs Client-Side Rendering?_
 <p>
 In client-server rendering, rather than receiving all of the content from the HTML document, content is rendered in the browser using the client-side JavaScript library. The browser does not make a new request to the server when a new page is loaded. Search engine rankings may be negatively impacted as the content is not rendered until the page is loaded on the browser, however, website rendering tends to be faster in client-side rendered app. In considering server side vs client side rendering, the developer will assess factors such as the scale of the project, the complexity of the application, the number of users, and user experience priorities.</p>
 <br />
@@ -394,7 +394,7 @@ In client-server rendering, rather than receiving all of the content from the HT
 <h2><b><i>Question :- What is Statelessness in REST APIs?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. Statelessness`_
+### _1. Statelessness_
 <p>As per the REST (REpresentational “State” Transfer) architecture, the server does not store any state about the client session on the server-side. This restriction is called Statelessness.</p>
 
 <p>Each request from the client to the server must contain all of the necessary information to understand the request. The server cannot take advantage of any stored context on the server.</p>
@@ -414,7 +414,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 
 <p>Thus each request MUST be stand alone and should not be affected by the previous conversation that happened with the same client in past.</p>
 
-### _`2. Application State vs Resource State`_
+### _2. Application State vs Resource State_
 <p>It is important to understand the between the application state and the resource state. Both are completely different things.</p>
 
 <p>Application state is server-side data that servers store to identify incoming client requests, their previous interaction details, and current context information.</p>
@@ -423,7 +423,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 
 > REST statelessness means being free from the application state.
 
-### _`3. Advantages of Stateless APIs`_
+### _3. Advantages of Stateless APIs_
 <p>There are some very noticeable advantages of having REST APIs stateless.</p>
 
 + Statelessness helps in scaling the APIs to millions of concurrent users by deploying it to multiple servers. Any server can handle any request because there is no session related dependency.
@@ -444,7 +444,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 
 <p>Instead, each API request should come with some sort of authentication credentials that must be validated on the server for every request.</p>
 
-### _`1. REST Security Design Principles`_
+### _1. REST Security Design Principles_
 
 + <strong>Least Privilege - </strong>
     <p>An entity should only have the required set of permissions to perform the actions for which they are authorized, and no more. Permissions can be added as needed and should be revoked when no longer in use.</p>
@@ -463,7 +463,7 @@ To enable clients to access these stateless APIs, it is necessary that servers a
 + <strong>Psychological Acceptability - </strong>
     <p>It states that security mechanisms should not make the resource more difficult to access than if the security mechanisms were not present. In short, security should not make worse the user experience.</p>
 
-### _`2. Best Practices to Secure REST APIs`_
+### _2. Best Practices to Secure REST APIs_
 
 + <strong>Keep it Simple - </strong>
 <p>Secure an API/System – just how secure it needs to be. Every time you make the solution more complex “unnecessarily,” you are also likely to leave a hole.</p>
@@ -505,49 +505,49 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 <h2><b><i>Question :- What is Lazy & Eager Loading?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. What is Lazy Loading?`_
+### _1. What is Lazy Loading?_
 <p>Lazy loading is the practice of delaying load or initialization of resources or objects until they’re actually needed to improve performance and save system resources. For example, if a web page has an image that the user has to scroll down to see, you can display a placeholder and lazy load the full image only when the user arrives to its location.</p>
 
 > The benefits of lazy loading include:
-#### _`a. Reduces initial load time – `_
+#### _a. Reduces initial load time – _
 <p>Lazy loading a webpage reduces page weight, allowing for a quicker page load time.</p>
 
-#### _`b. Bandwidth conservation – `_
+#### _b. Bandwidth conservation – _
 <p>Lazy loading conserves bandwidth by delivering content to users only if it’s requested.</p>
 
-#### _`c. System resource conservation – `_
+#### _c. System resource conservation – _
 <p>Lazy loading conserves both server and client resources, because only some of the images, JavaScript and other code actually needs to be rendered or executed.</p>
 
-### _`2. Lazy Loading vs. Eager Loading`_
+### _2. Lazy Loading vs. Eager Loading_
 <p>While lazy loading delays the initialization of a resource, eager loading initializes or loads a resource as soon as the code is executed. Eager loading also involves pre-loading related entities referenced by a resource. For example, a PHP script with an include statement performs eager loading—as soon as it executes, eager loading pulls in and loads the included resources.</p>
 
 <p>Eager loading is beneficial when there is an opportunity or need to load resources in the background. For example, some websites display a “loading” screen and eagerly load all the resources required for the web application to run.</p>
 
-### _`3. Lazy Loading Implementing Methods`_
+### _3. Lazy Loading Implementing Methods_
 <p>There are several open source libraries that can be used to implement lazy loading, including:</p>
 
-+ #### _`blazy.js – `_
++ #### _blazy.js – _
 <p>blazy.js is a lightweight JavaScript library for lazy loading and multi-serving images, iframes, video and other resources.</p>
 
-+ #### _`LazyLoad – `_
++ #### _LazyLoad – _
 <p>LazyLoad is a script that automatically loads images as they enter the viewport.</p>
 
 > <strong>Methods for implementing lazy loading in your code include:</strong>
 
-+ #### _`a. Lazy initialization – `_
++ #### _a. Lazy initialization – _
 <p>This method sets objects to null. Object data is loaded only after and whenever invoking them, check if null, and if so, load object data.</p>
 
-+ #### _`b. Virtual proxy – `_
++ #### _b. Virtual proxy – _
 <p>When accessing an object, call a virtual object with same interface as the real object. When the virtual object is called, load the real object, then delegate to it.</p>
 
-+ #### _`c. Ghost – `_
++ #### _c. Ghost – _
 <p>Load an object in partial state, only using an identifier. The first time a property on the object is called, load the full data.</p>
 
-+ #### _`d. Value holder – `_
++ #### _d. Value holder – _
 <p>Create a generic object that handles lazy loading behavior. This object should appear in place of an object’s data fields.</p>
 
 > <strong>Examples - </strong>
-#### _`a. Lazy Loading Images – `_
+#### _a. Lazy Loading Images – _
 <p>To lazy load an image, display a lightweight placeholder image, and replace with the real full-size image on scroll.</p>
 
 + Inline <img> tags, using JavaScript to populate the tag if image is in viewport
@@ -558,7 +558,7 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 
 + The CSS background-image property
 
-#### _`b. Lazy Loading Video – `_
+#### _b. Lazy Loading Video – _
 <p>To lazy load a video that doesn’t autoplay, you can use the HTML5 video tag’s preload attribute.</p>
 
 <p>For videos that autoplay, Google Chrome provides lazy loading automatically. In other browsers, you will need to declare the following attributes in the video tag:</p>
@@ -567,7 +567,7 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 <video autoplay muted loop playsinline width="xx" height="xx" poster="placeholder-image.jpg">
 ``` 
 
-### _`3. Lazy Loading Best Practices - `_
+### _3. Lazy Loading Best Practices - _
 <p>When performing lazy loading, consider the following tips:</p>
 
 + Only lazy load resources that are displayed below the fold or outside the user’s viewport. In code, only lazy load objects that are not needed for initial or essential system operations.
@@ -590,13 +590,13 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 <p>The invisible page could be a malicious page, or a legitimate page the user did not intend to visit – for example, a page on the user’s banking site that authorizes the transfer of money.</p>
 
 > There are several variations of the clickjacking attack, such as:
-+ #### _`1. Likejacking - `_
++ #### _1. Likejacking - _
 <p>A technique in which the Facebook “Like” button is manipulated, causing users to “like” a page they actually did not intend to like.</p>
 
-+ #### _`2. Cursorjacking - `_
++ #### _2. Cursorjacking - _
 <p>A UI redressing technique that changes the cursor for the position the user perceives to another position. Cursorjacking relies on vulnerabilities in Flash and the Firefox browser, which have now been fixed.</p>
 
-+ ### _`2. Clickjacking attack example - `_
++ ### _2. Clickjacking attack example - _
 <p>The attacker creates an attractive page which promises to give the user a free trip to Tahiti.</p>
 
 <p>In the background the attacker checks if the user is logged into his banking site and if so, loads the screen that enables transfer of funds, using query parameters to insert the attacker’s bank details into the form.</p>
@@ -609,20 +609,20 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 
 <p>The user is redirected to a page with information about the free gift (not knowing what happened in the background).</p>
 
-### _`3. Clickjacking mitigation - `_
+### _3. Clickjacking mitigation - _
 <p>There are two general ways to defend against clickjacking:</p>
 
-+ #### _`a. Client-side methods - `_
++ #### _a. Client-side methods - _
 <p>the most common is called Frame Busting. Client-side methods can be effective in some cases, but are considered not to be a best practice, because they can be easily bypassed.</p>
 
-+ #### _`b. Server-side methods - `_
++ #### _b. Server-side methods - _
 <p>The most common is X-Frame-Options. Server-side methods are recommended by security experts as an effective way to defend against clickjacking.</p>
 
 > <strong>Mitigating clickjacking with X-Frame-Options response header</strong>
 
 <p>The X-Frame-Options response header is passed as part of the HTTP response of a web page, indicating whether or not a browser should be allowed to render a page inside a < FRAME > or < IFRAME > tag.</p>
 
-+ #### _`a. There are three values allowed for the X-Frame-Options header: - `_
++ #### _a. There are three values allowed for the X-Frame-Options header: - _
 
     - DENY – does not allow any domain to display this page within a frame
 
@@ -630,12 +630,12 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 
     - ALLOW - FROM URI – allows the current page to be displayed in a frame, but only in a specific URI – for example www.example.com/frame-page
 
-+ #### _`b. Using the SAMEORIGIN option to defend against clickjacking - `_
++ #### _b. Using the SAMEORIGIN option to defend against clickjacking - _
 <p>X-Frame-Options allows content publishers to prevent their own content from being used in an invisible frame by attackers.</p>
 
 <p>The DENY option is the most secure, preventing any use of the current page in a frame. More commonly, SAMEORIGIN is used, as it does enable the use of frames, but limits them to the current domain.</p>
 
-+ #### _`c. Limitations of X-Frame-Options - `_
++ #### _c. Limitations of X-Frame-Options - _
 <p>To enable the SAMEORIGIN option across a website, the X-Frame-Options header needs to be returned as part of the HTTP response for each individual page (cannot be applied cross-site).</p>
 
 <p>X-Frame-Options does not support a whitelist of allowed domains, so it doesn’t work with multi-domain sites that need to display framed content between them.</p>
@@ -647,7 +647,7 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 <p>X-Frame-Options is a deprecated option in most browsers.</p>
 ```
 
-+ #### _`d. Clickjacking test – Is your site vulnerable? - `_
++ #### _d. Clickjacking test – Is your site vulnerable? - _
 <p>A basic way to test if your site is vulnerable to clickjacking is to create an HTML page and attempt to include a sensitive page from your website in an iframe. It is important to execute the test code on another web server, because this is the typical behavior in a clickjacking attack.</p>
 
 <p>Use code like the following, provided as part of the OWASP Testing Guide:</p>
@@ -683,27 +683,27 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 
 <p>Without session persistence, the web application would have to maintain this information across multiple servers, which can prove inefficient—especially for large networks.</p>
 
-### _`1. Session stickiness: Advantages and disadvantages `_
+### _1. Session stickiness: Advantages and disadvantages _
 <p>Session stickiness offers a number of benefits that can improve your web application’s performance, including:</p>
 
-+ #### _`a. Minimized data exchange `_
++ #### _a. Minimized data exchange _
 <p>When using sticky sessions, servers within your network don’t need to exchange session data, a costly process when done on scale.</p>
 
-+ #### _`b. RAM cache utilization `_
++ #### _b. RAM cache utilization _
 <p>Sticky sessions allow for more effective utilization of your application’s RAM cache, resulting in better responsiveness.</p>
 
 <p>That said, sticky sessions also make it more difficult to keep servers in balance. A server can become overloaded if it accumulates too many sessions, or if specific sticky sessions require a high number of resources. This could result in your load balancer having to shift a client to a different server mid-session, resulting in data loss.</p>
 
-### _`2. Persistence using session cookies `_
+### _2. Persistence using session cookies _
 
 > There are two types of cookie-based session persistence: duration-based and application-controlled.
 
-+ #### _`a. Duration-based session persistence `_
++ #### _a. Duration-based session persistence _
 <p>Your load balancer issues a cookie that defines a specific timeframe for session stickiness. Each time the load balancer receives a client request, it checks whether this cookie is present.</p>
 
 <p>After the specified duration elapses and the cookie expires, the session is not sticky anymore.</p>
 
-+ #### _`b. Application-controlled session persistence `_
++ #### _b. Application-controlled session persistence _
 <p>Your application generates a cookie that determines the duration of session stickiness. The load balancer still issues its own session cookie on top of it, but it now follows the lifetime of the application cookie.</p>
 
 <p>This makes sticky sessions more efficient, ensuring that users are never routed to a server after their local session cookie has already expired. However, it’s more complex to implement because it requires additional integration between the load balancer and the application.</p>
@@ -724,34 +724,34 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 
 <p>Organizations failing to secure their web applications run the risk of being attacked. Among other consequences, this can result in information theft, damaged client relationships, revoked licenses and legal proceedings.</p>
 
-### _`1. Web application vulnerabilities `_
+### _1. Web application vulnerabilities _
 <p>Web application vulnerabilities are typically the result of a lack of input/output sanitization, which are often exploited to either manipulate source code or gain unauthorized access.</p>
 
 > <strong>Such vulnerabilities enable the use of different attack vectors, including:</strong>
  
-+ ### _`a. SQL Injection `_
++ ### _a. SQL Injection _
 <p>Occurs when a perpetrator uses malicious SQL code to manipulate a backend database so it reveals information. Consequences include the unauthorized viewing of lists, deletion of tables and unauthorized administrative access.</p>
 
-+ ### _`b. Cross-site Scripting (XSS) `_
++ ### _b. Cross-site Scripting (XSS) _
 <p>XSS is an injection attack targeting users in order to access accounts, activate Trojans or modify page content. Stored XSS occurs when malicious code is injected directly into an application. Reflected XSStakes place when malicious script is reflected off of an application onto a user’s browser.</p>
 
-+ ### _`3. Remote File Inclusion `_
++ ### _3. Remote File Inclusion _
 <p>A hacker uses this type of attack to remotely inject a file onto a web application server. This can result in the execution of malicious scripts or code within the application, as well as data theft or manipulation.</p>
 
-+ ### _`4. Cross-site Request Forgery (CSRF) `_
++ ### _4. Cross-site Request Forgery (CSRF) _
 <p>An attack that could result in an unsolicited transfer of funds, changed passwords or data theft. It’s caused when a malicious web application makes a user’s browser perform an unwanted action in a site to which a user is logged on.</p>
 <br />
 
 <h2><b><i>Question :- What are the SOLID Principles?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-+ ### _`1. Single responsibility principle `_
++ ### _1. Single responsibility principle _
 <p>A class should have one and only one reason to change, meaning that a class should only have one job.</p>
 
-+ ### _`2. Open closed principle `_
++ ### _2. Open closed principle _
 <p>Objects or entities should be open for extension, but closed for modification.</p>
 
-+ ### _`3. Liskov substitution principle `_
++ ### _3. Liskov substitution principle _
 <p>Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.</p>
 
 <p>Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it.</p>
@@ -760,10 +760,10 @@ https://api.domain.com/user-management/users/{id}/someAction?apiKey=abcd12345678
 
 <p>In other words, as simple as that, a subclass should override the parent class methods in a way that does not break functionality from a client’s point of view.</p>
 
-+ ### _`4. Interface segregation principle `_
++ ### _4. Interface segregation principle _
 <p>A client should never be forced to implement an interface that it doesn’t use or clients shouldn’t be forced to depend on methods they do not use.</p>
 
-+ ### _`5. Dependency Inversion principle `_
++ ### _5. Dependency Inversion principle _
 <p>Entities must depend on abstractions not on concretions. It states that the high level module must not depend on the low level module, but they should depend on abstractions.</p>
 <br />
 
@@ -836,17 +836,17 @@ This process means that the initial load is prolonged. After initial load time, 
 <h2><b><i>Question :- Pros & Cons of Client-Side Rendering?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-+ ### _`1. Pros - `_
++ ### _1. Pros - _
 <p>They are fast. Although the site’s first load might be slow, once rendered, other requested pages served instantaneously.</p>
 
-+ ### _`2. Cons - `_
++ ### _2. Cons - _
 <p>They have prolonged initial load time. This increases the likelihood of poor user experience, and users can leave your site when they get frustrated waiting for the CSR to fully render the website.</p>
 
 <p>Search engine optimization takes a hit. One of the biggest downsides of CSR is that it affects search engine robots. CSR uses JavaScript. This slows down search engine robots as they crawl on a website. Search engine robots crawl and index an HTML file page first.</p>
 
 <p>This means that JavaScript content might be missed and not included during indexing, resulting in partial indexing and affecting the SEO. When the page is fully loaded, the site only loads one initial HTML mark-up. You will only have one meta tag for all pages.</p>
 
-+ ### _`3. When to use - `_
++ ### _3. When to use - _
 <p>This approach fits well when you have a large number of users accessing your web content. The content is rendered once upon every user request.</p>
 
 <p>This goes hand in hand if your application has a complex UI and a lot of dynamic content that doesn’t necessarily depend on SEO.</p>
@@ -857,15 +857,15 @@ This process means that the initial load is prolonged. After initial load time, 
 <h2><b><i>Question :- Pros & Cons of Server-Side Rendering?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-+ ### _`1. Pros - `_
++ ### _1. Pros - _
 <p>It is the best when it comes to search engine optimization. Every page is rendered on the website’s server independently. Take a look at a blog website. Each blog post is an independent page and is fetched independently from the server. Thus you can insert meta tags based on the page’s content.</p>
 
 <p>SSR allows page content to be focused and relevant to the social crawlers. Google and other search engine robots will thus be able to take account of your web page’s performance to enhance your web content ranking.</p>
 
-+ ### _`2. Cons - `_
++ ### _2. Cons - _
 <p>With SSR, the page reloads, and visiting a new page has to hit a server request again. This comes with the burden of high memory usage and high processing power on the server. It consumes unnecessary internet bandwidth and will obviously increase the hosting cost.</p>
 
-+ ### _`3. When to use - `_
++ ### _3. When to use - _
 <p>Every web page content is served independently. This would be a great chance to catch up with the social Crawlers to target a high SEO ranking.</p>
 
 <p>It has an overall slow rendering speed, thus it fits well when you have fewer users, a simple UI, few pages, less dynamic data, and less interactivity.</p>
@@ -874,7 +874,7 @@ This process means that the initial load is prolonged. After initial load time, 
 <h2><b><i>Question :- Pros & Cons of Static-Site Generation?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-+ ### _`1. Pros - `_
++ ### _1. Pros - _
 <p>They are ultra-fast. All of the content of your website is generated as HTML files ahead of time. When a user comes to your application and requests a home page or whatever page they request, the server will quickly respond and load it. It doesn’t have to do any processing. It doesn’t have to generate any HTML; it just serves it.</p>
 
 <p>They are more secure when compared to dynamic websites. When you build a static site, you are giving the user accessing the website everything you have. There are no backend to hack or databases or text boxes to inject malicious code into.</p>
@@ -887,12 +887,12 @@ This process means that the initial load is prolonged. After initial load time, 
 
 <p>You can host your website anywhere. You can host it on an s3 bucket or any cloud CDN, making your application easier to scale globally and serves data very quickly.</p>
 
-+ ### _`2. Cons - `_
++ ### _2. Cons - _
 <p>The data served may be stale and old. The only way to update it is to build the application again, which can take some time. You still have to deploy the content to the CDN/server to see the updates. If your application needs to update, you’ll have to re-kick the build process off.</p>
 
 <p>This can be mitigated by employing the concept of Incremental Static Regeneration (ISR), supported by Next.js. This way, you can get the latest data without having to rebuild your application fully.</p>
 
-+ ### _`3. When to use - `_
++ ### _3. When to use - _
 <p>SSG fits well when you have a lot of static content; it is fast and improves loading time for static HTML files.</p>
 
 <p>It is considered a good choice for SEO-ranked content.</p>
@@ -901,7 +901,7 @@ This process means that the initial load is prolonged. After initial load time, 
 <h2><b><i>Question :- Web API Security?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. What is an API - `_
+### _1. What is an API - _
 <p>An Application Programming Interface (API) is a software intermediary that allows your applications to communicate with one another. It provides routines, protocols, and tools for developers building software applications, while enabling the extraction and sharing of data in an accessible manner.</p>
 
 <p>Web APIs connect between applications and other services or platforms, such as social networks, games, databases and devices.</p>
@@ -909,56 +909,56 @@ This process means that the initial load is prolonged. After initial load time, 
 <p>Additionally, Internet of Things (IoT) applications and devices use APIs to gather data, or even control other devices. For example, a power company may use an API to adjust the temperature on a thermostat to save power.</p>
 
 > <strong>Soap API and REST API</strong>
-+ #### _`SOAP (Simple Object Access Protocol) - `_
++ #### _SOAP (Simple Object Access Protocol) - _
 <p>is an XML-based messaging protocol for exchanging information among computers. SOAP’s built-in WS-Security standard uses XML Encryption, XML Signature, and SAML tokens to deal with transactional messaging security considerations. SOAP also supports OASIS and W3C recommendations.</p>
 
 <p>SOAP’s built-in standards and envelope-style of payload transport require more overhead compared to working with other API implementations, such as REST. However, organizations that require more comprehensive security and compliance may benefit from using SOAP.</p>
 
-+ #### _`REST (Representational State Transfer) - `_
++ #### _REST (Representational State Transfer) - _
 <p>It uses HTTP to obtain data and perform operations on remote computer systems. It supports SSL authentication and HTTPS to achieve secure communication.</p>
 
 <p>REST uses the JSON standard for consuming API payloads, which simplifies data transfer over browsers. REST is stateless – each HTTP request contains all necessary information, meaning that neither the client nor the server are required to retain any data to satisfy the request. Unlike SOAP, which requires parsing and routing for each request to function on a local web service, REST leverages standard HTTP requests and does not require the repackaging of data.</p>
 
-### _`2. API security threats - `_
+### _2. API security threats - _
 <p>APIs often self-document information, such as their implementation and internal structure, which can be used as intelligence for a cyber-attack. Additional vulnerabilities, such as weak authentication, lack of encryption, business logic flaws and insecure endpoints make APIs vulnerable to the attacks outlined below.</p>
 
-+ #### _`a. Man In The Middle (MITM) - `_
++ #### _a. Man In The Middle (MITM) - _
 <p>A man in the middle (MITM) attack involves an attacker secretly relaying, intercepting or altering communications, including API messages, between two parties to obtain sensitive information.</p>
 
 <p>For example, a perpetrator can act as a man in the middle between an API issuing a session token in an HTTP header and a user’s browser. Intercepting that session token would grant access to the user’s account, which might include personal details, such as credit card information and login credentials.</p>
 
-+ #### _`b. API injections (XSS and SQLi) - `_
++ #### _b. API injections (XSS and SQLi) - _
 <p>In a code injection attack, malicious code is inserted into a vulnerable software program to stage an attack, such as cross site scripting (XSS) and SQL injection (SQLi).</p>
 
 <p>For example, a perpetrator can inject a malicious script into a vulnerable API, i.e., one that fails to perform proper filter input, escape output (FIEO), to launch an XSS attack targeting end users’ browsers. Additionally, malicious commands could be inserted into an API message, such as an SQL command that deletes tables from a database.</p>
 
 <p>Any web API requiring parsers or processers is vulnerable to attack. For example, a code generator that includes parsing for JSON code, and doesn’t sanitize input properly, is susceptible to the injection of executable code that runs in the development environment.</p>
 
-+ #### _`c. Distributed denial of service (DDoS) - `_
++ #### _c. Distributed denial of service (DDoS) - _
 <p>In a distributed denial-of-service (DDoS) attack, multiple systems flood the bandwidth or resources of a targeted system, usually one or more web servers. A DDoS attack on a web API attempts to overwhelm its memory and capacity by flooding it with concurrent connections, or by sending/requesting large amounts of information in each request.</p>
 
 <p>For example, a DDoS attack on the FCC website in early 2017 used commercial cloud services to issue a massive amount of API requests to a commenting system. This consumed available machine resources and crowded out human commenters, eventually causing the website to crash.</p>
 
-### _`3. API security best practices - `_
+### _3. API security best practices - _
 > <strong>Securing your API against the attacks outlined above should be based on:</strong>
-+ ### _`a. Authentication - `_
++ ### _a. Authentication - _
 <p>Determining the identity of an end user. In a REST API, basic authentication can be implemented using the TLS protocol, but OAuth 2 and OpenID Connect are more secure alternatives.</p>
 
-+ ### _`b. Authorization - `_
++ ### _b. Authorization - _
 <p>Determining the resources an identified user can access. An API should be built and tested to prevent users from accessing API functions or operations outside their predefined role. For example, a read-only API client shouldn’t be allowed to access an endpoint providing admin functionality.</p>
 <br />
 
 <h2><b><i>Question :- Cross site request forgery (CSRF) attack?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. What is CSRF? - `_
+### _1. What is CSRF? - _
 <p>Cross site request forgery (CSRF), also known as XSRF, Sea Surf or Session Riding, is an attack vector that tricks a web browser into executing an unwanted action in an application to which a user is logged in.</p>
 
 <p>A successful CSRF attack can be devastating for both the business and user. It can result in damaged client relationships, unauthorized fund transfers, changed passwords and data theft—including stolen session cookies.</p>
 
 <p>CSRFs are typically conducted using malicious social engineering, such as an email or link that tricks the victim into sending a forged request to a server. As the unsuspecting user is authenticated by their application at the time of the attack, it’s impossible to distinguish a legitimate request from a forged one.</p>
 
-### _`2. CSRF example - `_
+### _2. CSRF example - _
 <p>Before executing an assault, a perpetrator typically studies an application in order to make a forged request appear as legitimate as possible.</p>
 
 <p>For example, a typical GET request for a $100 bank transfer might look like:</p>
@@ -994,7 +994,7 @@ GET http://netbank.com/transfer.do?acct=AttackerA&amount=$100 HTTP/1.1
 </body>
 ```
 
-### _`3. Methods of CSRF mitigation - `_
+### _3. Methods of CSRF mitigation - _
 <p>A number of effective methods exist for both prevention and mitigation of CSRF attacks. From a user’s perspective, prevention is a matter of safeguarding login credentials and denying unauthorized actors access to applications.</p>
 
 > <strong>Best practices include:</strong>
@@ -1013,7 +1013,7 @@ GET http://netbank.com/transfer.do?acct=AttackerA&amount=$100 HTTP/1.1
 <h2><b><i>Question :- Cross site scripting (XSS) attacks?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. What is cross site scripting (XSS) - `_
+### _1. What is cross site scripting (XSS) - _
 <p>Cross site scripting (XSS) is a common attack vector that injects malicious code into a vulnerable web application. XSS differs from other web attack vectors (e.g., SQL injections), in that it does not directly target the application itself. Instead, the users of the web application are the ones at risk.</p>
 
 <p>A successful cross site scripting attack can have devastating consequences for an online business’s reputation and its relationship with its clients.</p>
@@ -1026,12 +1026,12 @@ GET http://netbank.com/transfer.do?acct=AttackerA&amount=$100 HTTP/1.1
 
 <p>Reflected XSS involves the reflecting of a malicious script off of a web application, onto a user’s browser. The script is embedded into a link, and is only activated once that link is clicked on.</p>
 
-### _`2. What is stored cross site scripting - `_
+### _2. What is stored cross site scripting - _
 <p>To successfully execute a stored XSS attack, a perpetrator has to locate a vulnerability in a web application and then inject malicious script into its server (e.g., via a comment field).</p>
 
 <p>One of the most frequent targets are websites that allow users to share content, including blogs, social networks, video sharing platforms and message boards. Every time the infected page is viewed, the malicious script is transmitted to the victim’s browser.</p>
 
-### _`3. Stored XSS attack example - `_
+### _3. Stored XSS attack example - _
 <p>While browsing an e-commerce website, a perpetrator discovers a vulnerability that allows HTML tags to be embedded in the site’s comments section. The embedded tags become a permanent feature of the page, causing the browser to parse them with the rest of the source code every time the page is opened.</p>
 
 <p>The attacker adds the following comment: Great price for a great item! Read my review below</p>
@@ -1052,7 +1052,7 @@ GET http://netbank.com/transfer.do?acct=AttackerA&amount=$100 HTTP/1.1
 <h2><b><i>Question :- SQL (Structured query language) Injection?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. What is SQL injection - `_
+### _1. What is SQL injection - _
 <p>SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code for backend database manipulation to access information that was not intended to be displayed. This information may include any number of items, including sensitive company data, user lists or private customer details.</p>
 
 <p>The impact SQL injection can have on a business is far-reaching. A successful attack may result in the unauthorized viewing of user lists, the deletion of entire tables and, in certain cases, the attacker gaining administrative rights to a database, all of which are highly detrimental to a business.</p>
@@ -1061,7 +1061,7 @@ GET http://netbank.com/transfer.do?acct=AttackerA&amount=$100 HTTP/1.1
 
 <p>While this vector can be used to attack any SQL database, websites are the most frequent targets.</p>
 
-### _`2. What are SQL queries - `_
+### _2. What are SQL queries - _
 <p>SQL is a standardized language used to access and manipulate databases to build customizable data views for each user. SQL queries are used to execute commands, such as data retrieval, updates, and record removal. Different SQL elements implement these tasks, e.g., queries using the SELECT statement to retrieve data, based on user-provided parameters.</p>
 
 > <strong>A typical eStore’s SQL database query may look like the following:</strong>
@@ -1091,7 +1091,7 @@ WHERE ItemNumber = 999
 
 <p>As you can gather from the syntax, this query provides the name and description for item number 999.</p>
 
-### _`4. Types of SQL Injections - `_
+### _4. Types of SQL Injections - _
 > <strong>SQL injections typically fall under three categories: </strong>
 
 + In-band SQLi (Classic), 
@@ -1106,7 +1106,7 @@ WHERE ItemNumber = 999
 
 <p>Slowloris has proven highly-effective against many popular types of web server software, including Apache 1.x and 2.x.</p>
 
-### _`1. Attack description - `_
+### _1. Attack description - _
 <p>Slowloris works by opening multiple connections to the targeted web server and keeping them open as long as possible. It does this by continuously sending partial HTTP requests, none of which are ever completed. The attacked servers open more and connections open, waiting for each of the attack requests to be completed.</p>
 
 <p>Periodically, the Slowloris sends subsequent HTTP headers for each request, but never actually completes the request. Ultimately, the targeted server’s maximum concurrent connection pool is filled, and additional (legitimate) connection attempts are denied.</p>
@@ -1127,7 +1127,7 @@ WHERE ItemNumber = 999
 <h2><b><i>Question :- Personally Identifiable Information (PII)?</i></b></h2>
 <h3><b><i>Answer - </i></b></h3>
 
-### _`1. What Is Personally Identifiable Information (PII) - `_
+### _1. What Is Personally Identifiable Information (PII) - _
 <p>Personally Identifiable Information (PII) is a legal term pertaining to information security environments. While PII has several formal definitions, generally speaking, it is information that can be used by organizations on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context.</p>
 
 <p>Non-sensitive PII can be transmitted in unsecure form without causing harm to an individual. Sensitive PII must be transmitted and stored in secure form, for example, using encryption, because it could cause harm to an individual, if disclosed.</p>
@@ -1140,7 +1140,7 @@ WHERE ItemNumber = 999
 
 <p>Hypertext Markup Language (HTML) injection is a technique used to take advantage of non-validated input to modify a web page presented by a web application to its users. Attackers take advantage of the fact that the content of a web page is often related to a previous interaction with users. When applications fail to validate user data, an attacker can send HTML-fomatted text to modify site content that gets presented to other users. A specifically crafted query can lead to inclusion in the web page of attacker-controlled HTML elements which change the way the application content gets exposed to the web.</p>
 
-### _`1. Detailed Description - `_
+### _1. Detailed Description - _
 <p>HTML is the language that determines how application data (like a products’ catalog) gets presented to users in their web browser. This language contains visualization commands, like the color of the page’s background and the size of embedded pictures. It also contains links to other web pages, and additional commands intended for the user’s browser. Furthermore, automated tools that collect useful information from the web on behalf of users often do so by systematically accessing and parsing the relevant information in the application’s HTML pages.</p>
 
 <p>In modern interactive web pages, the content of a web page often reflects the results of processing previous user actions. If the user’s input is not validated and the application is vulnerable, an attacker can craft and send input to the application that lets him inject pieces of his HTML code into the HTML content of the application’s response.</p>
@@ -1183,7 +1183,7 @@ WHERE ItemNumber = 999
 
 <p>A typical application use-case for storing one user’s input and showing it to other users is when an application contains pages where users can post comments to the original content of the page or interact with each other. This is another example where application vulnerabilities can lead to HTML injection.</p>
 
-### _`2. Prevention - `_
+### _2. Prevention - _
 <p>The most common way of detecting HTML injection is by looking for HTML elements in the incoming HTTP stream that contains the user input. A naïve validation of user input simply removes any HTML-syntax substrings (like tags and links) from any user-supplied text. However, there are many instances where the application expects HTML input from the user. For example, this happens when the user submits visually-formatted text or text containing links to legitimate sites with related content. To avoid false positives, the security mechanism that detects possible injections and protects the application should learn in what application context user input is allowed to contain HTML. Also, it should be able to stop HTML input if it learns that such text is pasted as-is in web page generated by vulnerable application components.</p>
 <br />
 
@@ -1196,7 +1196,7 @@ WHERE ItemNumber = 999
 
 <p>Here we will be discussing why the new protocol was needed, its evolution from SPDY, how it differs from HTTP/1.1 and how a CDN can assist in making your site content HTTP/2 compatible.</p>
 
-### _`1. From SPDY to HTTP/2 - `_
+### _1. From SPDY to HTTP/2 - _
 <p>HTTP/1.1 was the third version of HTTP and the standard protocol for over 15 years. It introduced persistent connections for improved performance and laid the foundation for standard requests, such as GET, HEAD, PUT, and POST.</p>
 
 <p>As websites became more resource-intensive, however, HTTP/1.1’s limitations began to show. Specifically, its use of one outstanding request per TCP connection created significant overhead, slowing down page load times.</p>
@@ -1205,22 +1205,22 @@ WHERE ItemNumber = 999
 
 <p>While HTTP/2 was initially modeled after SPDY, it was soon modified to include unique features, including a fixed header compression algorithm, (in contrast to SPDY’s dynamic stream-based compression). Following its release, Google announced that it would remove support for SPDY in favor of HTTP/2.</p>
 
-### _`2. HTTP/1.1 vs. HTTP/2 Protocol - `_
+### _2. HTTP/1.1 vs. HTTP/2 Protocol - _
 > <strong>HTTP/2 improved on HTTP/1.1 in a number of ways that allowed for speedier content delivery and improved user experience, including:</strong>
 
-+ #### _`a. Binary protocols - `_
++ #### _a. Binary protocols - _
 <p>Binary protocols consume less bandwidth, are more efficiently parsed and are less error-prone than the textual protocols used by HTTP/1.1. Additionally, they can better handle elements such as whitespace, capitalization and line endings.</p>
 
-+ #### _`b. Multiplexing  - `_
++ #### _b. Multiplexing  - _
 <p>HTTP/2 is multiplexed, i.e., it can initiate multiple requests in parallel over a single TCP connection. As a result, web pages containing several elements are delivered over one TCP connection. These capabilities solve the head-of-line blocking problem in HTTP/1.1, in which a packet at the front of the line blocks others from being transmitted.</p>
 
-+ #### _`c. Header compression - `_
++ #### _c. Header compression - _
 <p>HTTP/2 uses header compression to reduce the overhead caused by TCP’s slow-start mechanism.</p>
 
-+ #### _`d. Server push - `_
++ #### _d. Server push - _
 <p>HTTP/2 servers push likely-to-be-used resources into a browser’s cache, even before they’re requested. This allows browsers to display content without additional request cycles.</p>
 
-+ #### _`e. Increased security - `_
++ #### _e. Increased security - _
 <p>Web browsers only support HTTP/2 via encrypted connections, increasing user and application security.</p>
 <br />
 
